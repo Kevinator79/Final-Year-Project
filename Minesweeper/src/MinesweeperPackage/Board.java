@@ -39,7 +39,7 @@ public class Board {
   }
 
   private boolean checkValidCell(int currentRow, int currentColumn) {
-    return (currentRow >= 0) && (currentRow < rows) && (currentColumn >= 0) && (currentColumn < columns);
+    return ((currentRow >= 0) && (currentRow < rows) && (currentColumn >= 0) && (currentColumn < columns));
   }
 
   private void generateNumbers() {
@@ -98,5 +98,29 @@ public class Board {
   public void initBoard() {
     generateMines();
     generateNumbers();
+  }
+
+  public void display() {
+    for (int i = 0; i < rows; i++) {
+      System.out.print("\t ");
+      for (int j = 0; j < columns; j++) {
+        if (cells[i][j].checkHasMine()==false) {
+          if ((cells[i][j].getAdjacentMines()) != 0) {
+            System.out.print(cells[i][j].getAdjacentMines());
+          }
+          else {
+            System.out.print(" ");
+          }
+        }
+        else if (cells[i][j].checkHasMine()==true) {
+          System.out.print("X");
+        }
+        else {
+          System.out.print(cells[i][j]);
+        }
+        System.out.print(" | ");
+      }
+      System.out.print("\n");
+    }
   }
 }
