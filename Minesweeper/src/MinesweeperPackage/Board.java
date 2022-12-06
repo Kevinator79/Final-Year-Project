@@ -43,8 +43,6 @@ public class Board {
   }
 
   private void generateNumbers() {
-    int neighbourCount = Cell.getNeighbourCount();
-
     for (int i=0; i<rows; i++) {
       for (int j=0; j<columns; j++) {
         if (cells[i][j].checkHasMine() == false) {
@@ -100,11 +98,111 @@ public class Board {
     generateNumbers();
   }
 
-  public void display() {
+  private boolean checkValidOpening(int currentRow, int currentColumn) {
+    return ((currentRow >= 0) && (currentRow < rows) && (currentColumn >= 0) && (currentColumn < columns) && (!(cells[currentRow][currentColumn].checkBeenFlagged())) && (!(cells[currentRow][currentColumn].checkBeenOpened())));
+  }
+
+  private void openNeighboursRecursively(int currentRow, int currentColumn) {
+    cells[currentRow][currentColumn].setBeenOpened();
+    if (checkValidOpening(currentRow-1,currentColumn) == true) {  //North
+      if (cells[currentRow-1][currentColumn].getAdjacentMines() > 0) {
+        cells[currentRow-1][currentColumn].setBeenOpened();
+      }
+      else {
+        openNeighboursRecursively(currentRow-1, currentColumn);
+      }
+    }
+    if (checkValidOpening(currentRow-1,currentColumn+1) == true) {  //North-East
+      if (cells[currentRow-1][currentColumn+1].getAdjacentMines() > 0) {
+        cells[currentRow-1][currentColumn+1].setBeenOpened();
+      }
+      else {
+        openNeighboursRecursively(currentRow-1, currentColumn+1);
+      }
+    }
+    if (checkValidOpening(currentRow,currentColumn+1) == true) {  //East
+      if (cells[currentRow][currentColumn+1].getAdjacentMines() > 0) {
+        cells[currentRow][currentColumn+1].setBeenOpened();
+      }
+      else {
+        openNeighboursRecursively(currentRow, currentColumn+1);
+      }
+    }
+    if (checkValidOpening(currentRow+1,currentColumn+1) == true) {  //South-East
+      if (cells[currentRow+1][currentColumn+1].getAdjacentMines() > 0) {
+        cells[currentRow+1][currentColumn+1].setBeenOpened();
+      }
+      else {
+        openNeighboursRecursively(currentRow+1, currentColumn+1);
+      }
+    }
+    if (checkValidOpening(currentRow+1,currentColumn) == true) {  //South
+      if (cells[currentRow+1][currentColumn].getAdjacentMines() > 0) {
+        cells[currentRow+1][currentColumn].setBeenOpened();
+      }
+      else {
+        openNeighboursRecursively(currentRow+1, currentColumn);
+      }
+    }
+    if (checkValidOpening(currentRow+1,currentColumn-1) == true) {  //South-West
+      if (cells[currentRow+1][currentColumn-1].getAdjacentMines() > 0) {
+        cells[currentRow+1][currentColumn-1].setBeenOpened();
+      }
+      else {
+        openNeighboursRecursively(currentRow+1, currentColumn-1);
+      }
+    }
+    if (checkValidOpening(currentRow,currentColumn-1) == true) {  //West
+      if (cells[currentRow][currentColumn-1].getAdjacentMines() > 0) {
+        cells[currentRow][currentColumn-1].setBeenOpened();
+      }
+      else {
+        openNeighboursRecursively(currentRow, currentColumn-1);
+      }
+    }
+    if (checkValidOpening(currentRow-1,currentColumn-1) == true) {  //North-West
+      if (cells[currentRow-1][currentColumn-1].getAdjacentMines() > 0) {
+        cells[currentRow-1][currentColumn-1].setBeenOpened();
+      }
+      else {
+        openNeighboursRecursively(currentRow-1, currentColumn-1);
+      }
+    }
+  }
+
+  public boolean checkAllCellsOpenedOrFlagged() {
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < columns; j++) {
+        if ((cells[i][j].checkBeenOpened() == false) || (cells[i][j].checkBeenFlagged() == false)) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  public boolean playMove(int row, int column) {
+    if (cells[row][column].checkHasMine() == true) {
+      System.out.println("Game Over!");
+    }
+    else {
+      cells[row][column].setBeenOpened();
+      //displayBoardForSolving();
+      //System.out.println("Cell revealed");
+      if (cells[row][column].getAdjacentMines() == 0) {
+        openNeighboursRecursively(row, column);
+      }
+      displayBoardForSolving();
+      System.out.println("Openings revealed");
+    }
+    return true;
+  }
+
+  public void displayGeneratedBoard() {
     for (int i = 0; i < rows; i++) {
       System.out.print("\t ");
       for (int j = 0; j < columns; j++) {
-        if (cells[i][j].checkHasMine()==false) {
+        if (cells[i][j].checkHasMine() == false) {
           if ((cells[i][j].getAdjacentMines()) != 0) {
             System.out.print(cells[i][j].getAdjacentMines());
           }
@@ -112,11 +210,32 @@ public class Board {
             System.out.print(" ");
           }
         }
-        else if (cells[i][j].checkHasMine()==true) {
+        else if (cells[i][j].checkHasMine() == true) {
           System.out.print("X");
         }
         else {
           System.out.print(cells[i][j]);
+        }
+        System.out.print(" | ");
+      }
+      System.out.print("\n");
+    }
+  }
+
+  public void displayBoardForSolving() {
+    for (int i = 0; i < rows; i++) {
+      System.out.print("\t ");
+      for (int j = 0; j < columns; j++) {
+        if (cells[i][j].checkBeenOpened() == true) {
+          if (cells[i][j].checkHasMine() == true) {
+            System.out.print("X");
+          }
+          else {
+            System.out.print(cells[i][j].getAdjacentMines());
+          }
+        }
+        else {
+          System.out.print("?");
         }
         System.out.print(" | ");
       }
