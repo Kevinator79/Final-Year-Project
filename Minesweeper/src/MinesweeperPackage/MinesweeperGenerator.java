@@ -15,13 +15,16 @@ public class MinesweeperGenerator {
   }
 
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
+    //Scanner sc = new Scanner(System.in);
     MinesweeperGenerator minesweeper = new MinesweeperGenerator(9, 9, 10);
-    System.out.println("Enter row number - 1: "); //remember 0 indexed
-    int row = sc.nextInt();
-    System.out.println("Enter column number - 1: "); //remember 0 indexed
-    int column = sc.nextInt();
-    minesweeper.board.playMove(row, column);
+    while ((minesweeper.board.checkAllCellsOpenedOrFlagged() == false)) {
+      Scanner sc = new Scanner(System.in);
+      System.out.println("Enter row number - 1: "); //remember 0 indexed
+      int row = sc.nextInt();
+      System.out.println("Enter column number - 1: "); //remember 0 indexed
+      int column = sc.nextInt();
+      minesweeper.board.playMove(row, column);
+    }
     System.out.println("End Test");
   }
 }
