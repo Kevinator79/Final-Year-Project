@@ -463,7 +463,37 @@ public class Board {
         if ((cells[i][j].getAdjacentMines() == 1) && (numberOfClosedNeighbours == 1)) {
           flagCell(arrayOfClosedNeighbourRows[0], arrayOfClosedNeighbourColumns[0]);
         }
-        if ((cells[i][j].getAdjacentMines() == 3) && (numberOfClosedNeighbours == 3)) {
+        else if ((cells[i][j].getAdjacentMines() == 2) && (numberOfClosedNeighbours == 2)) {
+          for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
+            flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
+          }
+        }
+        else if ((cells[i][j].getAdjacentMines() == 3) && (numberOfClosedNeighbours == 3)) {
+          for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
+            flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
+          }
+        }
+        else if ((cells[i][j].getAdjacentMines() == 4) && (numberOfClosedNeighbours == 4)) {
+          for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
+            flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
+          }
+        }
+        else if ((cells[i][j].getAdjacentMines() == 5) && (numberOfClosedNeighbours == 5)) {
+          for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
+            flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
+          }
+        }
+        else if ((cells[i][j].getAdjacentMines() == 6) && (numberOfClosedNeighbours == 6)) {
+          for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
+            flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
+          }
+        }
+        else if ((cells[i][j].getAdjacentMines() == 7) && (numberOfClosedNeighbours == 7)) {
+          for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
+            flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
+          }
+        }
+        else if ((cells[i][j].getAdjacentMines() == 8) && (numberOfClosedNeighbours == 8)) {
           for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
             flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
           }
