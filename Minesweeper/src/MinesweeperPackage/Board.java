@@ -1,5 +1,7 @@
 package MinesweeperPackage;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Board {
@@ -8,6 +10,10 @@ public class Board {
   private final int numberOfMines;
   private int flaggedCount;
   private Cell cells[][];
+  private static final int listOfNeighbouringCellRows[] = {-1, -1, -1, 0, 0, 1,
+    1, 1};
+  private static final int listOfNeighbouringCellColumns[] = {-1, 0, 1, -1, 1
+      , -1, 0, 1};
 
   public Board(int rows, int columns, int numberOfMines) {
     this.rows = rows;
@@ -435,6 +441,30 @@ public class Board {
             flagCell(i, j+1);
             flagCell(i+1, j+1);
             openCellsFor1_2_2_1VerticalPattern(i, j);
+          }
+        }
+        //pattern match for 1's
+        if (cells[i][j].getAdjacentMines() == 1) {
+          int numberOfClosedNeighbours = 0;
+          Integer arrayOfClosedNeighbourRows[] = {};
+          Integer arrayOfClosedNeighbourColumns[] = {};
+          ArrayList<Integer> arrayListOfClosedNeighbourRows = new ArrayList<Integer>(Arrays.asList(arrayOfClosedNeighbourRows));
+          ArrayList<Integer> arrayListOfClosedNeighbourColumns = new ArrayList<Integer>(Arrays.asList(arrayOfClosedNeighbourColumns));
+          for (int k = 0; k < 8; k++) {
+            int rowOfNextCellToCheck = i + listOfNeighbouringCellRows[k];
+            int columnOfNextCellToCheck = j + listOfNeighbouringCellColumns[k];
+            if ((checkValidCell(rowOfNextCellToCheck, columnOfNextCellToCheck) == true) && (cells[rowOfNextCellToCheck][columnOfNextCellToCheck].checkBeenOpened() == false)) {
+              numberOfClosedNeighbours++;
+              arrayListOfClosedNeighbourRows.add(rowOfNextCellToCheck);
+              arrayListOfClosedNeighbourColumns.add(columnOfNextCellToCheck);
+            }
+          }
+          arrayOfClosedNeighbourRows = arrayListOfClosedNeighbourRows.toArray(arrayOfClosedNeighbourRows);
+          arrayOfClosedNeighbourColumns = arrayListOfClosedNeighbourColumns.toArray(arrayOfClosedNeighbourColumns);
+          if (numberOfClosedNeighbours == 1) {
+            int rowToFlag = arrayOfClosedNeighbourRows[0];
+            int columnToFlag = arrayOfClosedNeighbourColumns[0];
+            flagCell(rowToFlag, columnToFlag);
           }
         }
       }

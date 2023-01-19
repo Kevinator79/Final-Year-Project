@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MinesweeperGenerator {
   private Board board;
-  private enum gameState {ONGOING, WON, LOST};
+  private enum GameState {ONGOING, WON, LOST};
 
   public MinesweeperGenerator (int rows, int columns, int numberOfMines) {
     board = new Board(rows, columns, numberOfMines);
@@ -17,7 +17,8 @@ public class MinesweeperGenerator {
   public static void main(String[] args) {
     //Scanner sc = new Scanner(System.in);
     MinesweeperGenerator minesweeper = new MinesweeperGenerator(9, 9, 10);
-    while ((minesweeper.board.checkAllCellsOpenedOrFlagged() == false)) {
+    //GameState gameState = GameState.ONGOING;
+    while ((minesweeper.board.checkAllCellsOpenedOrFlagged() == false)/* && (!(gameState == GameState.LOST))*/) {
       Scanner sc = new Scanner(System.in);
       System.out.println("Enter row number - 1: "); //remember 0 indexed
       int row = sc.nextInt();
