@@ -443,28 +443,29 @@ public class Board {
             openCellsFor1_2_2_1VerticalPattern(i, j);
           }
         }
-        //pattern match for 1's
-        if (cells[i][j].getAdjacentMines() == 1) {
-          int numberOfClosedNeighbours = 0;
-          Integer arrayOfClosedNeighbourRows[] = {};
-          Integer arrayOfClosedNeighbourColumns[] = {};
-          ArrayList<Integer> arrayListOfClosedNeighbourRows = new ArrayList<Integer>(Arrays.asList(arrayOfClosedNeighbourRows));
-          ArrayList<Integer> arrayListOfClosedNeighbourColumns = new ArrayList<Integer>(Arrays.asList(arrayOfClosedNeighbourColumns));
-          for (int k = 0; k < 8; k++) {
-            int rowOfNextCellToCheck = i + listOfNeighbouringCellRows[k];
-            int columnOfNextCellToCheck = j + listOfNeighbouringCellColumns[k];
-            if ((checkValidCell(rowOfNextCellToCheck, columnOfNextCellToCheck) == true) && (cells[rowOfNextCellToCheck][columnOfNextCellToCheck].checkBeenOpened() == false)) {
-              numberOfClosedNeighbours++;
-              arrayListOfClosedNeighbourRows.add(rowOfNextCellToCheck);
-              arrayListOfClosedNeighbourColumns.add(columnOfNextCellToCheck);
-            }
+        //pattern match for a single cell
+        int numberOfClosedNeighbours = 0;
+        Integer arrayOfClosedNeighbourRows[] = {};
+        Integer arrayOfClosedNeighbourColumns[] = {};
+        ArrayList<Integer> arrayListOfClosedNeighbourRows = new ArrayList<Integer>(Arrays.asList(arrayOfClosedNeighbourRows));
+        ArrayList<Integer> arrayListOfClosedNeighbourColumns = new ArrayList<Integer>(Arrays.asList(arrayOfClosedNeighbourColumns));
+        for (int k = 0; k < 8; k++) {
+          int rowOfNextCellToCheck = i + listOfNeighbouringCellRows[k];
+          int columnOfNextCellToCheck = j + listOfNeighbouringCellColumns[k];
+          if ((checkValidCell(rowOfNextCellToCheck, columnOfNextCellToCheck) == true) && (cells[rowOfNextCellToCheck][columnOfNextCellToCheck].checkBeenOpened() == false)) {
+            numberOfClosedNeighbours++;
+            arrayListOfClosedNeighbourRows.add(rowOfNextCellToCheck);
+            arrayListOfClosedNeighbourColumns.add(columnOfNextCellToCheck);
           }
-          arrayOfClosedNeighbourRows = arrayListOfClosedNeighbourRows.toArray(arrayOfClosedNeighbourRows);
-          arrayOfClosedNeighbourColumns = arrayListOfClosedNeighbourColumns.toArray(arrayOfClosedNeighbourColumns);
-          if (numberOfClosedNeighbours == 1) {
-            int rowToFlag = arrayOfClosedNeighbourRows[0];
-            int columnToFlag = arrayOfClosedNeighbourColumns[0];
-            flagCell(rowToFlag, columnToFlag);
+        }
+        arrayOfClosedNeighbourRows = arrayListOfClosedNeighbourRows.toArray(arrayOfClosedNeighbourRows);
+        arrayOfClosedNeighbourColumns = arrayListOfClosedNeighbourColumns.toArray(arrayOfClosedNeighbourColumns);
+        if ((cells[i][j].getAdjacentMines() == 1) && (numberOfClosedNeighbours == 1)) {
+          flagCell(arrayOfClosedNeighbourRows[0], arrayOfClosedNeighbourColumns[0]);
+        }
+        if ((cells[i][j].getAdjacentMines() == 3) && (numberOfClosedNeighbours == 3)) {
+          for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
+            flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
           }
         }
       }
