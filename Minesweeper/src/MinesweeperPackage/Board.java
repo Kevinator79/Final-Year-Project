@@ -304,6 +304,38 @@ public class Board {
     }
   }
 
+  public void openCellsForSingleCell() {
+    for (int i=0; i<rows; i++) {
+      for (int j = 0; j < columns; j++) {
+        if (cells[i][j].getAdjacentMines() == 1) {
+          int numberOfFlaggedNeighbours = 0;
+          Integer arrayOfNonFlaggedNeighbourRows[] = {};
+          Integer arrayOfNonFlaggedNeighbourColumns[] = {};
+          ArrayList<Integer> arrayListOfNonFlaggedNeighbourRows = new ArrayList<Integer>(Arrays.asList(arrayOfNonFlaggedNeighbourRows));
+          ArrayList<Integer> arrayListOfNonFlaggedNeighbourColumns = new ArrayList<Integer>(Arrays.asList(arrayOfNonFlaggedNeighbourColumns));
+          for (int k = 0; k < 8; k++) {
+            int rowOfNextCellToCheck = i + listOfNeighbouringCellRows[k];
+            int columnOfNextCellToCheck = j + listOfNeighbouringCellColumns[k];
+            if ((checkValidCell(rowOfNextCellToCheck, columnOfNextCellToCheck) == true) && (cells[rowOfNextCellToCheck][columnOfNextCellToCheck].checkBeenFlagged() == false)) {
+              arrayListOfNonFlaggedNeighbourRows.add(rowOfNextCellToCheck);
+              arrayListOfNonFlaggedNeighbourColumns.add(columnOfNextCellToCheck);
+            }
+            else if ((checkValidCell(rowOfNextCellToCheck, columnOfNextCellToCheck) == true) && (cells[rowOfNextCellToCheck][columnOfNextCellToCheck].checkBeenFlagged() == true)) {
+              numberOfFlaggedNeighbours++;
+            }
+          }
+          arrayOfNonFlaggedNeighbourRows = arrayListOfNonFlaggedNeighbourRows.toArray(arrayOfNonFlaggedNeighbourRows);
+          arrayOfNonFlaggedNeighbourColumns = arrayListOfNonFlaggedNeighbourColumns.toArray(arrayOfNonFlaggedNeighbourColumns);
+          if (numberOfFlaggedNeighbours == 1) {
+            for (int l = 0; l < arrayListOfNonFlaggedNeighbourRows.size(); l++) {
+              openCell(arrayOfNonFlaggedNeighbourRows[l], arrayOfNonFlaggedNeighbourColumns[l]);
+            }
+          }
+        }
+      }
+    }
+  }
+
   private void patternMatching() {
     for (int i=0; i<rows; i++) {
       for (int j = 0; j < columns; j++) {
@@ -443,6 +475,7 @@ public class Board {
             openCellsFor1_2_2_1VerticalPattern(i, j);
           }
         }
+
         //pattern match for a single cell
         int numberOfClosedNeighbours = 0;
         Integer arrayOfClosedNeighbourRows[] = {};
@@ -523,6 +556,7 @@ public class Board {
         openNeighboursRecursively(row, column);
       }
       patternMatching();
+      openCellsForSingleCell();
       displayBoardForSolving();
       System.out.println("Openings revealed");
     }
