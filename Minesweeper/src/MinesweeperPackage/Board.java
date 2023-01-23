@@ -182,6 +182,9 @@ public class Board {
 
   public void openCell(int currentRow, int currentColumn) {
     cells[currentRow][currentColumn].setBeenOpened();
+    if (cells[currentRow][currentColumn].getAdjacentMines() == 0) {
+      openNeighboursRecursively(currentRow, currentColumn);
+    }
   }
 
   public void openCellsFor1_2_1HorizontalPattern(int i, int j) {
@@ -326,9 +329,10 @@ public class Board {
           }
           arrayOfNonFlaggedNeighbourRows = arrayListOfNonFlaggedNeighbourRows.toArray(arrayOfNonFlaggedNeighbourRows);
           arrayOfNonFlaggedNeighbourColumns = arrayListOfNonFlaggedNeighbourColumns.toArray(arrayOfNonFlaggedNeighbourColumns);
-          if (numberOfFlaggedNeighbours == 1) {
+          if ((numberOfFlaggedNeighbours == 1) && (cells[i][j].getAdjacentMines() == 1)) {
             for (int l = 0; l < arrayListOfNonFlaggedNeighbourRows.size(); l++) {
               openCell(arrayOfNonFlaggedNeighbourRows[l], arrayOfNonFlaggedNeighbourColumns[l]);
+              //patternMatching();
             }
           }
         }
@@ -408,7 +412,7 @@ public class Board {
         }
         //pattern match for 1-2-2-1
         //horizontal patterns
-        if ((cells[i][j].getAdjacentMines() == 2) && (checkValidCell(i, j+1) == true) && (cells[i][j+1].getAdjacentMines() == 2)) {
+        if ((cells[i][j].getAdjacentMines() == 2) && (checkValidCell(i, j+1) == true) && (cells[i][j+1].getAdjacentMines() == 2) && (cells[i][j+1].checkBeenOpened() == true)) {
           if ((checkValidCell(i, j-1)) && (cells[i][j-1].checkBeenOpened() == true) && (cells[i][j-1].getAdjacentMines() == 1) && (checkValidCell(i, j+2)) && (cells[i][j+2].checkBeenOpened() == true) && (cells[i][j+2].getAdjacentMines() == 1) && (checkValidCell(i+1, j)) && (cells[i+1][j].checkBeenOpened() == true) && (checkValidCell(i+1, j+1)) && (cells[i+1][j+1].checkBeenOpened() == true)) {
             flagCell(i-1, j);
             flagCell(i-1, j+1);
@@ -442,7 +446,7 @@ public class Board {
           }
         }
         //vertical patterns
-        if ((cells[i][j].getAdjacentMines() == 2) && (checkValidCell(i+1, j) == true) && (cells[i+1][j].getAdjacentMines() == 2)) {
+        if ((cells[i][j].getAdjacentMines() == 2) && (checkValidCell(i+1, j) == true) && (cells[i+1][j].getAdjacentMines() == 2) && (cells[i+1][j].checkBeenOpened() == true)) {
           if ((checkValidCell(i-1, j)) && (cells[i-1][j].checkBeenOpened() == true) && (cells[i-1][j].getAdjacentMines() == 1) && (checkValidCell(i+2, j)) && (cells[i+2][j].checkBeenOpened() == true) && (cells[i+2][j].getAdjacentMines() == 1) && (checkValidCell(i, j-1)) && (cells[i][j-1].checkBeenOpened() == true) && (checkValidCell(i+1, j-1)) && (cells[i+1][j-1].checkBeenOpened() == true)) {
             flagCell(i, j+1);
             flagCell(i+1, j+1);
@@ -493,40 +497,40 @@ public class Board {
         }
         arrayOfClosedNeighbourRows = arrayListOfClosedNeighbourRows.toArray(arrayOfClosedNeighbourRows);
         arrayOfClosedNeighbourColumns = arrayListOfClosedNeighbourColumns.toArray(arrayOfClosedNeighbourColumns);
-        if ((cells[i][j].getAdjacentMines() == 1) && (numberOfClosedNeighbours == 1)) {
+        if ((cells[i][j].getAdjacentMines() == 1) && (numberOfClosedNeighbours == 1) && (cells[i][j].checkBeenOpened() == true)) {
           flagCell(arrayOfClosedNeighbourRows[0], arrayOfClosedNeighbourColumns[0]);
         }
-        else if ((cells[i][j].getAdjacentMines() == 2) && (numberOfClosedNeighbours == 2)) {
+        else if ((cells[i][j].getAdjacentMines() == 2) && (numberOfClosedNeighbours == 2) && (cells[i][j].checkBeenOpened() == true)) {
           for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
             flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
           }
         }
-        else if ((cells[i][j].getAdjacentMines() == 3) && (numberOfClosedNeighbours == 3)) {
+        else if ((cells[i][j].getAdjacentMines() == 3) && (numberOfClosedNeighbours == 3) && (cells[i][j].checkBeenOpened() == true)) {
           for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
             flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
           }
         }
-        else if ((cells[i][j].getAdjacentMines() == 4) && (numberOfClosedNeighbours == 4)) {
+        else if ((cells[i][j].getAdjacentMines() == 4) && (numberOfClosedNeighbours == 4) && (cells[i][j].checkBeenOpened() == true)) {
           for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
             flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
           }
         }
-        else if ((cells[i][j].getAdjacentMines() == 5) && (numberOfClosedNeighbours == 5)) {
+        else if ((cells[i][j].getAdjacentMines() == 5) && (numberOfClosedNeighbours == 5) && (cells[i][j].checkBeenOpened() == true)) {
           for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
             flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
           }
         }
-        else if ((cells[i][j].getAdjacentMines() == 6) && (numberOfClosedNeighbours == 6)) {
+        else if ((cells[i][j].getAdjacentMines() == 6) && (numberOfClosedNeighbours == 6) && (cells[i][j].checkBeenOpened() == true)) {
           for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
             flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
           }
         }
-        else if ((cells[i][j].getAdjacentMines() == 7) && (numberOfClosedNeighbours == 7)) {
+        else if ((cells[i][j].getAdjacentMines() == 7) && (numberOfClosedNeighbours == 7) && (cells[i][j].checkBeenOpened() == true)) {
           for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
             flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
           }
         }
-        else if ((cells[i][j].getAdjacentMines() == 8) && (numberOfClosedNeighbours == 8)) {
+        else if ((cells[i][j].getAdjacentMines() == 8) && (numberOfClosedNeighbours == 8) && (cells[i][j].checkBeenOpened() == true)) {
           for (int l = 0; l < arrayListOfClosedNeighbourRows.size(); l++) {
             flagCell(arrayOfClosedNeighbourRows[l], arrayOfClosedNeighbourColumns[l]);
           }
