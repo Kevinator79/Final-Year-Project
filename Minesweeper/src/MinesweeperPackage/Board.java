@@ -310,7 +310,7 @@ public class Board {
   public void openCellsForSingleCell() {
     for (int i=0; i<rows; i++) {
       for (int j = 0; j < columns; j++) {
-        if (cells[i][j].getAdjacentMines() == 1) {
+        if (cells[i][j].checkBeenOpened() == true) {
           int numberOfFlaggedNeighbours = 0;
           Integer arrayOfNonFlaggedNeighbourRows[] = {};
           Integer arrayOfNonFlaggedNeighbourColumns[] = {};
@@ -330,6 +330,42 @@ public class Board {
           arrayOfNonFlaggedNeighbourRows = arrayListOfNonFlaggedNeighbourRows.toArray(arrayOfNonFlaggedNeighbourRows);
           arrayOfNonFlaggedNeighbourColumns = arrayListOfNonFlaggedNeighbourColumns.toArray(arrayOfNonFlaggedNeighbourColumns);
           if ((numberOfFlaggedNeighbours == 1) && (cells[i][j].getAdjacentMines() == 1)) {
+            for (int l = 0; l < arrayListOfNonFlaggedNeighbourRows.size(); l++) {
+              openCell(arrayOfNonFlaggedNeighbourRows[l], arrayOfNonFlaggedNeighbourColumns[l]);
+              //patternMatching();
+            }
+          }
+          else if ((numberOfFlaggedNeighbours == 2) && (cells[i][j].getAdjacentMines() == 2)) {
+            for (int l = 0; l < arrayListOfNonFlaggedNeighbourRows.size(); l++) {
+              openCell(arrayOfNonFlaggedNeighbourRows[l], arrayOfNonFlaggedNeighbourColumns[l]);
+              //patternMatching();
+            }
+          }
+          else if ((numberOfFlaggedNeighbours == 3) && (cells[i][j].getAdjacentMines() == 3)) {
+            for (int l = 0; l < arrayListOfNonFlaggedNeighbourRows.size(); l++) {
+              openCell(arrayOfNonFlaggedNeighbourRows[l], arrayOfNonFlaggedNeighbourColumns[l]);
+              //patternMatching();
+            }
+          }
+          else if ((numberOfFlaggedNeighbours == 4) && (cells[i][j].getAdjacentMines() == 4)) {
+            for (int l = 0; l < arrayListOfNonFlaggedNeighbourRows.size(); l++) {
+              openCell(arrayOfNonFlaggedNeighbourRows[l], arrayOfNonFlaggedNeighbourColumns[l]);
+              //patternMatching();
+            }
+          }
+          else if ((numberOfFlaggedNeighbours == 5) && (cells[i][j].getAdjacentMines() == 5)) {
+            for (int l = 0; l < arrayListOfNonFlaggedNeighbourRows.size(); l++) {
+              openCell(arrayOfNonFlaggedNeighbourRows[l], arrayOfNonFlaggedNeighbourColumns[l]);
+              //patternMatching();
+            }
+          }
+          else if ((numberOfFlaggedNeighbours == 6) && (cells[i][j].getAdjacentMines() == 6)) {
+            for (int l = 0; l < arrayListOfNonFlaggedNeighbourRows.size(); l++) {
+              openCell(arrayOfNonFlaggedNeighbourRows[l], arrayOfNonFlaggedNeighbourColumns[l]);
+              //patternMatching();
+            }
+          }
+          else if ((numberOfFlaggedNeighbours == 7) && (cells[i][j].getAdjacentMines() == 7)) {
             for (int l = 0; l < arrayListOfNonFlaggedNeighbourRows.size(); l++) {
               openCell(arrayOfNonFlaggedNeighbourRows[l], arrayOfNonFlaggedNeighbourColumns[l]);
               //patternMatching();
