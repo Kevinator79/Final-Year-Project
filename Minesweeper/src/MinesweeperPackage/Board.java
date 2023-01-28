@@ -194,7 +194,7 @@ public class Board {
     if (checkValidCell(i+1, j)) {
       openCell(i+1, j);
     }
-    if (checkValidCell(i-1, j+2)) {
+    if (checkValidCell(i-1, j-2)) {
       openCell(i-1, j-2);
     }
     if (checkValidCell(i, j-2)) {
@@ -548,6 +548,32 @@ public class Board {
           }
           else if ((checkValidCell(i-1, j)) && (cells[i-1][j].checkBeenOpened() == true) && (cells[i-1][j].getAdjacentMines() != 0) && (checkValidCell(i+1, j)) && (cells[i+1][j].checkBeenOpened() == true) && (cells[i+1][j].getAdjacentMines() == 1) && (checkValidCell(i-1, j-1))) {
             flagCell(i-1, j-1);
+          }
+        }
+        //pattern match for 1-1-X
+        //horizontal patterns
+        if ((cells[i][j].getAdjacentMines() == 1)  && (cells[i][j].checkBeenOpened() == true)) {
+          //1-1-X
+          if ((checkValidCell(i, j+1)) && (cells[i][j+1].getAdjacentMines() == 1) && (cells[i][j+1].checkBeenOpened() == true) && (checkValidCell(i, j+2)) && (cells[i][j+2].getAdjacentMines() != 0) && (cells[i][j+2].checkBeenOpened() == true)) {
+            if ((((!checkValidCell(i-1, j-1)) && (!checkValidCell(i, j-1)) && (!checkValidCell(i+1, j-1))) || ((checkValidCell(i-1, j-1)) && (cells[i-1][j-1].checkBeenOpened() == true) && (cells[i-1][j-1].getAdjacentMines() != 0) && (checkValidCell(i, j-1)) && (cells[i][j-1].checkBeenOpened() == true) && (cells[i][j-1].getAdjacentMines() != 0) && (checkValidCell(i+1, j-1)) && (cells[i+1][j-1].checkBeenOpened() == true) && (cells[i+1][j-1].getAdjacentMines() != 0)))) {
+              if ((checkValidCell(i+1, j)) && (cells[i+1][j].checkBeenOpened() == true) && (checkValidCell(i+1, j+1)) && (cells[i+1][j+1].checkBeenOpened() == true) && (checkValidCell(i+1, j+2)) && (cells[i+1][j+2].checkBeenOpened() == true) && (checkValidCell(i-1, j+2))) {
+                openCell(i-1, j+2);
+              }
+              else if ((checkValidCell(i-1, j)) && (cells[i-1][j].checkBeenOpened() == true) && (checkValidCell(i-1, j+1)) && (cells[i-1][j+1].checkBeenOpened() == true) && (checkValidCell(i-1, j+2)) && (cells[i-1][j+2].checkBeenOpened() == true) && (checkValidCell(i+1, j+2))) {
+                openCell(i+1, j+2);
+              }
+            }
+          }
+          //X-1-1
+          if ((checkValidCell(i, j-1)) && (cells[i][j-1].getAdjacentMines() == 1) && (cells[i][j-1].checkBeenOpened() == true) && (checkValidCell(i, j-2)) && (cells[i][j-2].getAdjacentMines() != 0) && (cells[i][j-2].checkBeenOpened() == true)) {
+            if ((((!checkValidCell(i-1, j+1)) && (!checkValidCell(i, j+1)) && (!checkValidCell(i+1, j+1))) || ((checkValidCell(i-1, j+1)) && (cells[i-1][j+1].checkBeenOpened() == true) && (cells[i-1][j+1].getAdjacentMines() != 0) && (checkValidCell(i, j+1)) && (cells[i][j+1].checkBeenOpened() == true) && (cells[i][j+1].getAdjacentMines() != 0) && (checkValidCell(i+1, j+1)) && (cells[i+1][j+1].checkBeenOpened() == true) && (cells[i+1][j+1].getAdjacentMines() != 0)))) {
+              if ((checkValidCell(i+1, j)) && (cells[i+1][j].checkBeenOpened() == true) && (checkValidCell(i+1, j-1)) && (cells[i+1][j-1].checkBeenOpened() == true) && (checkValidCell(i+1, j-2)) && (cells[i+1][j-2].checkBeenOpened() == true) && (checkValidCell(i-1, j-2))) {
+                openCell(i-1, j-2);
+              }
+              else if ((checkValidCell(i-1, j)) && (cells[i-1][j].checkBeenOpened() == true) && (checkValidCell(i-1, j-1)) && (cells[i-1][j-1].checkBeenOpened() == true) && (checkValidCell(i-1, j-2)) && (cells[i-1][j-2].checkBeenOpened() == true) && (checkValidCell(i+1, j-2))) {
+                openCell(i+1, j-2);
+              }
+            }
           }
         }
         //pattern match for a single cell
