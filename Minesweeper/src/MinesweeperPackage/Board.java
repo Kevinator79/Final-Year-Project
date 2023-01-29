@@ -563,6 +563,13 @@ public class Board {
                 openCell(i+1, j+2);
               }
             }
+            //1-1-X on edge
+            else if ((!checkValidCell(i, j-1)) && (!checkValidCell(i-1, j-1)) && (!checkValidCell(i+1, j)) && (!checkValidCell(i+1, j+1)) && (!checkValidCell(i+1, j+2)) && (checkValidCell(i-1, j+2))) {
+              openCell(i-1, j+2);
+            }
+            else if ((!checkValidCell(i, j-1)) && (!checkValidCell(i+1, j-1)) && (!checkValidCell(i-1, j)) && (!checkValidCell(i-1, j+1)) && (!checkValidCell(i-1, j+2)) && (checkValidCell(i+1, j+2))) {
+              openCell(i+1, j+2);
+            }
           }
           //X-1-1
           if ((checkValidCell(i, j-1)) && (cells[i][j-1].getAdjacentMines() == 1) && (cells[i][j-1].checkBeenOpened() == true) && (checkValidCell(i, j-2)) && (cells[i][j-2].getAdjacentMines() != 0) && (cells[i][j-2].checkBeenOpened() == true)) {
@@ -573,6 +580,13 @@ public class Board {
               else if ((checkValidCell(i-1, j)) && (cells[i-1][j].checkBeenOpened() == true) && (checkValidCell(i-1, j-1)) && (cells[i-1][j-1].checkBeenOpened() == true) && (checkValidCell(i-1, j-2)) && (cells[i-1][j-2].checkBeenOpened() == true) && (checkValidCell(i+1, j-2))) {
                 openCell(i+1, j-2);
               }
+            }
+            //X-1-1 on edge
+            else if ((!checkValidCell(i, j+1)) && (!checkValidCell(i-1, j+1)) && (!checkValidCell(i+1, j)) && (!checkValidCell(i+1, j-1)) && (!checkValidCell(i+1, j-2)) && (checkValidCell(i-1, j-2))) {
+              openCell(i-1, j-2);
+            }
+            else if ((!checkValidCell(i, j+1)) && (!checkValidCell(i+1, j+1)) && (!checkValidCell(i-1, j)) && (!checkValidCell(i-1, j-1)) && (!checkValidCell(i-1, j-2)) && (checkValidCell(i+1, j-2))) {
+              openCell(i+1, j-2);
             }
           }
         }
