@@ -16,8 +16,12 @@ public class MinesweeperGenerator {
 
   public static void main(String[] args) {
     //Scanner sc = new Scanner(System.in);
-    MinesweeperGenerator minesweeper = new MinesweeperGenerator(9, 9, 10);
+    MinesweeperGenerator minesweeper = new MinesweeperGenerator(8, 8, 10);
     //GameState gameState = GameState.ONGOING;
+    minesweeper.board.firstGuess();
+    System.out.println("\n");
+    minesweeper.board.displayBoardForSolving();
+    System.out.println("Openings revealed");
     while ((minesweeper.board.checkAllCellsOpenedOrFlagged() == false)/* && (!(gameState == GameState.LOST))*/) {
       Scanner sc = new Scanner(System.in);
       System.out.println("Enter row number - 1: "); //remember 0 indexed

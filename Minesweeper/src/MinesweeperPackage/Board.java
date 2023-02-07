@@ -686,6 +686,94 @@ public class Board {
     }
   }
 
+  private static final int beginner60Rows[] = {0, 7, 7};
+  private static final int beginner60Columns[] = {7, 0, 7};
+  private static final int beginner50Rows[] = {0};
+  private static final int beginner50Columns[] = {0};
+  private static final int beginner42Rows[] = {0, 0, 3, 4, 5, 6, 6, 7, 7, 7};
+  private static final int beginner42Columns[] = {3, 6, 0, 7, 7, 0, 7, 1, 4, 5};
+  private static final int beginner41Rows[] = {0, 0, 1, 2, 2, 3, 4, 5, 7, 7, 7};
+  private static final int beginner41Columns[] = {4, 5, 7, 0, 7, 7, 0, 0, 2, 3, 6};
+  private static final int beginner40Rows[] = {0};
+  private static final int beginner40Columns[] = {2};
+  private static final int beginner34Rows[] = {0, 1};
+  private static final int beginner34Columns[] = {1, 0};
+  private static final int beginner24Rows[] = {1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6};
+  private static final int beginner24Columns[] = {3, 6, 1, 3, 4, 5, 6, 1, 2, 3, 5, 6, 2, 3, 5, 6, 2, 3, 4, 5, 1, 2, 4, 5};
+  private static final int beginner23Rows[] = {1, 1, 1, 2, 3, 4, 4, 5, 5, 6, 6};
+  private static final int beginner23Columns[] = {2, 4, 5, 2, 4, 1, 4, 1, 6, 3, 6};
+  private static final int beginner19Rows[] = {1};
+  private static final int beginner19Columns[] = {1};
+
+  public void firstGuess() {
+    int uniqueTotal = 60 + 50 + 42 + 41 + 40 + 34 + 24 + 23 + 19;
+    Random random = new Random();
+    int p = random.nextInt(100);
+    if (p < 60) {
+      int q = random.nextInt(3);
+      openCell(beginner60Rows[q], beginner60Columns[q]);
+      System.out.println(beginner60Rows[q] + " " + beginner60Columns[q]);
+    }
+    else {
+      p = random.nextInt(100);
+      if (p < 50) {
+        openCell(beginner50Rows[0], beginner50Columns[0]);
+        System.out.println(beginner50Rows[0] + " " + beginner50Columns[0]);
+      }
+      else {
+        p = random.nextInt(100);
+        if (p < 42) {
+          int q = random.nextInt(10);
+          openCell(beginner42Rows[q], beginner42Columns[q]);
+          System.out.println(beginner42Rows[q] + " " + beginner42Columns[q]);
+        }
+        else {
+          p = random.nextInt(100);
+          if (p < 41) {
+            int q = random.nextInt(11);
+            openCell(beginner41Rows[q], beginner41Columns[q]);
+            System.out.println(beginner41Rows[q] + " " + beginner41Columns[q]);
+          }
+          else {
+            p = random.nextInt(100);
+            if (p < 40) {
+              openCell(beginner40Rows[0], beginner40Columns[0]);
+              System.out.println(beginner40Rows[0] + " " + beginner40Columns[0]);
+            }
+            else {
+              p = random.nextInt(100);
+              if (p < 34) {
+                int q = random.nextInt(2);
+                openCell(beginner34Rows[q], beginner34Columns[q]);
+                System.out.println(beginner34Rows[q] + " " + beginner34Columns[q]);
+              }
+              else {
+                p = random.nextInt(100);
+                if (p < 24) {
+                  int q = random.nextInt(24);
+                  openCell(beginner24Rows[q], beginner24Columns[q]);
+                  System.out.println(beginner24Rows[q] + " " + beginner24Columns[q]);
+                }
+                else {
+                  p = random.nextInt(100);
+                  if (p < 23) {
+                    int q = random.nextInt(11);
+                    openCell(beginner23Rows[q], beginner23Columns[q]);
+                    System.out.println(beginner23Rows[q] + " " + beginner23Columns[q]);
+                  }
+                  else {
+                    openCell(beginner19Rows[0], beginner19Columns[0]);
+                    System.out.println(beginner19Rows[0] + " " + beginner19Columns[0]);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   public boolean checkAllCellsOpenedOrFlagged() {
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < columns; j++) {
