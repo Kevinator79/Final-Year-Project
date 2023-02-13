@@ -18,7 +18,7 @@ public class MinesweeperGenerator {
     //Scanner sc = new Scanner(System.in);
     MinesweeperGenerator minesweeper = new MinesweeperGenerator(8, 8, 10);
     //GameState gameState = GameState.ONGOING;
-    minesweeper.board.firstGuess();
+    minesweeper.board.firstMove();
     System.out.println("\n");
     minesweeper.board.displayBoardForSolving();
     System.out.println("Openings revealed");

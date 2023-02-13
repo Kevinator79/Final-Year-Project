@@ -22,6 +22,10 @@ public class Cell {
     hasMine = true;
   }
 
+  public void removeMine() {
+    hasMine = false;
+  }
+
   public boolean checkBeenOpened() {
     return beenOpened;
   }
