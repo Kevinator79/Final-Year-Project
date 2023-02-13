@@ -686,24 +686,43 @@ public class Board {
     }
   }
 
-  private static final int beginner60Rows[] = {0, 7, 7};
-  private static final int beginner60Columns[] = {7, 0, 7};
-  private static final int beginner50Rows[] = {0};
-  private static final int beginner50Columns[] = {0};
-  private static final int beginner42Rows[] = {0, 0, 3, 4, 5, 6, 6, 7, 7, 7};
-  private static final int beginner42Columns[] = {3, 6, 0, 7, 7, 0, 7, 1, 4, 5};
-  private static final int beginner41Rows[] = {0, 0, 1, 2, 2, 3, 4, 5, 7, 7, 7};
-  private static final int beginner41Columns[] = {4, 5, 7, 0, 7, 7, 0, 0, 2, 3, 6};
-  private static final int beginner40Rows[] = {0};
-  private static final int beginner40Columns[] = {2};
-  private static final int beginner34Rows[] = {0, 1};
-  private static final int beginner34Columns[] = {1, 0};
-  private static final int beginner24Rows[] = {1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6};
-  private static final int beginner24Columns[] = {3, 6, 1, 3, 4, 5, 6, 1, 2, 3, 5, 6, 2, 3, 5, 6, 2, 3, 4, 5, 1, 2, 4, 5};
-  private static final int beginner23Rows[] = {1, 1, 1, 2, 3, 4, 4, 5, 5, 6, 6};
-  private static final int beginner23Columns[] = {2, 4, 5, 2, 4, 1, 4, 1, 6, 3, 6};
-  private static final int beginner19Rows[] = {1};
-  private static final int beginner19Columns[] = {1};
+  private static final int[] beginner60Rows = {0, 7, 7};
+  private static final int[] beginner60Columns = {7, 0, 7};
+  private static final int[] beginner50Rows = {0};
+  private static final int[] beginner50Columns = {0};
+  private static final int[] beginner42Rows = {0, 0, 3, 4, 5, 6, 6, 7, 7, 7};
+  private static final int[] beginner42Columns = {3, 6, 0, 7, 7, 0, 7, 1, 4, 5};
+  private static final int[] beginner41Rows = {0, 0, 1, 2, 2, 3, 4, 5, 7, 7, 7};
+  private static final int[] beginner41Columns = {4, 5, 7, 0, 7, 7, 0, 0, 2, 3, 6};
+  private static final int[] beginner40Rows = {0};
+  private static final int[] beginner40Columns = {2};
+  private static final int[] beginner34Rows = {0, 1};
+  private static final int[] beginner34Columns = {1, 0};
+  private static final int[] beginner24Rows = {1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6};
+  private static final int[] beginner24Columns = {3, 6, 1, 3, 4, 5, 6, 1, 2, 3, 5, 6, 2, 3, 5, 6, 2, 3, 4, 5, 1, 2, 4, 5};
+  private static final int[] beginner23Rows = {1, 1, 1, 2, 3, 4, 4, 5, 5, 6, 6};
+  private static final int[] beginner23Columns = {2, 4, 5, 2, 4, 1, 4, 1, 6, 3, 6};
+  private static final int[] beginner19Rows = {1};
+  private static final int[] beginner19Columns = {1};
+
+  private static final int[] intermediate60Rows = {0, 15, 15};
+  private static final int[] intermediate60Columns = {15, 0, 15};
+  private static final int[] intermediate50Rows = {0};
+  private static final int[] intermediate50Columns = {0};
+  private static final int[] intermediate43Rows = {0, 0, 0, 0, 2, 4, 6, 6, 7, 9, 9, 10, 12, 13, 14, 14, 15, 15, 15, 15, 15, 15};
+  private static final int[] intermediate43Columns = {3, 4, 6, 11, 0, 15, 0, 15, 15, 0, 15, 15, 15, 0, 0, 15, 1, 7, 8, 9, 10, 12};
+  private static final int[] intermediate42Rows = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 4, 5, 5, 7, 8, 8, 10, 11, 11, 12, 13, 15, 15, 15, 15, 15, 15, 15, 15};
+  private static final int[] intermediate42Columns = {5, 7, 8, 9, 10, 12, 13, 14, 15, 15, 0, 15, 0, 0, 15, 0, 0, 15, 0, 0, 15, 0, 15, 2, 3, 4, 5, 6, 11, 13, 14};
+  private static final int[] intermediate41Rows = {0};
+  private static final int[] intermediate41Columns = {2};
+  private static final int[] intermediate36Rows = {0, 1};
+  private static final int[] intermediate36Columns = {1, 0};
+  private static final int[] intermediate26Rows = {3, 5, 9, 11, 13};
+  private static final int[] intermediate26Columns = {12, 6, 10, 4, 14};
+  private static final int[] intermediate25Rows = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14};
+  private static final int[] intermediate25Columns = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
+  private static final int[] intermediate21Rows = {1};
+  private static final int[] intermediate21Columns = {1};
 
   public void shiftMineOnFirstMove(int currentRow, int currentColumn) {
     cells[currentRow][currentColumn].removeMine();
@@ -720,9 +739,10 @@ public class Board {
     }
     generateNumbers();
     System.out.println("Mine shifted");
+    displayGeneratedBoard();
   }
 
-  public void firstMove() {
+  public void beginnerFirstMove() {
     Random random = new Random();
     int p = random.nextInt(100);
     if (p < 60) {
@@ -815,6 +835,105 @@ public class Board {
         }
       }
     }
+  }
+
+  public void intermediateFirstMove() {
+    Random random = new Random();
+    int p = random.nextInt(100);
+    if (p < 60) {
+      int q = random.nextInt(3);
+      if (cells[intermediate60Rows[q]][intermediate60Columns[q]].checkHasMine() == true) {
+        shiftMineOnFirstMove(intermediate60Rows[q], intermediate60Columns[q]);
+      }
+      openCell(intermediate60Rows[q], intermediate60Columns[q]);
+      System.out.println(intermediate60Rows[q] + " " + intermediate60Columns[q]);
+    }
+    else {
+      p = random.nextInt(100);
+      if (p < 50) {
+        if (cells[intermediate50Rows[0]][intermediate50Columns[0]].checkHasMine() == true) {
+          shiftMineOnFirstMove(intermediate50Rows[0], intermediate50Columns[0]);
+        }
+        openCell(intermediate50Rows[0], intermediate50Columns[0]);
+        System.out.println(intermediate50Rows[0] + " " + intermediate50Columns[0]);
+      }
+      else {
+        p = random.nextInt(100);
+        if (p < 43) {
+          int q = random.nextInt(22);
+          if (cells[intermediate43Rows[q]][intermediate43Columns[q]].checkHasMine() == true) {
+            shiftMineOnFirstMove(intermediate43Rows[q], intermediate43Columns[q]);
+          }
+          openCell(intermediate43Rows[q], intermediate43Columns[q]);
+          System.out.println(intermediate43Rows[q] + " " + intermediate43Columns[q]);
+        }
+        else {
+          p = random.nextInt(100);
+          if (p < 42) {
+            int q = random.nextInt(31);
+            if (cells[intermediate42Rows[q]][intermediate42Columns[q]].checkHasMine() == true) {
+              shiftMineOnFirstMove(intermediate42Rows[q], intermediate42Columns[q]);
+            }
+            openCell(intermediate42Rows[q], intermediate42Columns[q]);
+            System.out.println(intermediate42Rows[q] + " " + intermediate42Columns[q]);
+          }
+          else {
+            p = random.nextInt(100);
+            if (p < 41) {
+              if (cells[intermediate41Rows[0]][intermediate41Columns[0]].checkHasMine() == true) {
+                shiftMineOnFirstMove(intermediate41Rows[0], intermediate41Columns[0]);
+              }
+              openCell(intermediate41Rows[0], intermediate41Columns[0]);
+              System.out.println(intermediate41Rows[0] + " " + intermediate41Columns[0]);
+            }
+            else {
+              p = random.nextInt(100);
+              if (p < 36) {
+                int q = random.nextInt(2);
+                if (cells[intermediate36Rows[q]][intermediate36Columns[q]].checkHasMine() == true) {
+                  shiftMineOnFirstMove(intermediate36Rows[q], intermediate36Columns[q]);
+                }
+                openCell(intermediate36Rows[q], intermediate36Columns[q]);
+                System.out.println(intermediate36Rows[q] + " " + intermediate36Columns[q]);
+              }
+              else {
+                p = random.nextInt(100);
+                if (p < 26) {
+                  int q = random.nextInt(5);
+                  if (cells[intermediate26Rows[q]][intermediate26Columns[q]].checkHasMine() == true) {
+                    shiftMineOnFirstMove(intermediate26Rows[q], intermediate26Columns[q]);
+                  }
+                  openCell(intermediate26Rows[q], intermediate26Columns[q]);
+                  System.out.println(intermediate26Rows[q] + " " + intermediate26Columns[q]);
+                }
+                else {
+                  p = random.nextInt(100);
+                  if (p < 25) {
+                    int q = random.nextInt(190);
+                    if (cells[intermediate25Rows[q]][intermediate25Columns[q]].checkHasMine() == true) {
+                      shiftMineOnFirstMove(intermediate25Rows[q], intermediate25Columns[q]);
+                    }
+                    openCell(intermediate25Rows[q], intermediate25Columns[q]);
+                    System.out.println(intermediate25Rows[q] + " " + intermediate25Columns[q]);
+                  }
+                  else {
+                    if (cells[intermediate21Rows[0]][intermediate21Columns[0]].checkHasMine() == true) {
+                      shiftMineOnFirstMove(intermediate21Rows[0], intermediate21Columns[0]);
+                    }
+                    openCell(intermediate21Rows[0], intermediate21Columns[0]);
+                    System.out.println(intermediate21Rows[0] + " " + intermediate21Columns[0]);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  public void expertFirstMove() {
+
   }
 
   public boolean checkAllCellsOpenedOrFlagged() {
