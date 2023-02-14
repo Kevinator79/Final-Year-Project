@@ -725,18 +725,18 @@ public class Board {
   private static final int[] intermediate21Columns = {1};
 
   public void shiftMineOnFirstMove(int currentRow, int currentColumn) {
-    cells[currentRow][currentColumn].removeMine();
     int replacedCount = 0;
-    while (replacedCount == 0) {
-      for (int i = 0; i < currentRow; i++) {
-        for (int j = 0; j < currentColumn; j++) {
-          if (cells[i][j].checkHasMine() == false) {
+    for (int i = 0; i < 8; i++) {
+      for (int j = 0; j < 8; j++) {
+        if (cells[i][j].checkHasMine() == false) {
+          while (replacedCount == 0) {
             cells[i][j].setMine();
             replacedCount++;
           }
         }
       }
     }
+    cells[currentRow][currentColumn].removeMine();
     generateNumbers();
     System.out.println("Mine shifted");
     displayGeneratedBoard();
