@@ -724,6 +724,25 @@ public class Board {
   private static final int[] intermediate21Rows = {1};
   private static final int[] intermediate21Columns = {1};
 
+  private static final int[] expert50Rows = {0, 15, 15};
+  private static final int[] expert50Columns = {29, 0, 29};
+  private static final int[] expert40Rows = {0};
+  private static final int[] expert40Columns = {0};
+  private static final int[] expert32Rows = {0, 0, 0, 11, 12, 13, 15, 15, 15, 15, 15, 15};
+  private static final int[] expert32Columns = {13, 18, 20, 29, 29, 29, 7, 14, 25, 26, 27, 28};
+  private static final int[] expert31Rows = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 12, 13, 14, 14, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15};
+  private static final int[] expert31Columns = {4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29, 0, 29, 0, 29, 0, 29, 0, 29, 0, 29, 0, 29, 0, 29, 0, 29, 0, 29, 0, 0, 0, 0, 29, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
+  private static final int[] expert30Rows = {0};
+  private static final int[] expert30Columns = {3};
+  private static final int[] expert25Rows = {0, 0, 1};
+  private static final int[] expert25Columns = {1, 2, 0};
+  private static final int[] expert16Rows = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14};
+  private static final int[] expert16Columns = {6, 7, 8, 10, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 2, 6, 10, 12, 13, 14, 15, 19, 20, 21, 22, 24, 25, 26, 276, 7, 8, 10, 12, 14, 17, 18, 21, 22, 23, 24, 25, 26, 6, 10, 11, 12, 13, 17, 18, 21, 22, 23, 24, 25, 26, 3, 5, 9, 10, 11, 12, 13, 14, 16, 17, 18, 21, 22, 23, 24, 25, 26, 6, 8, 10, 11, 12, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 25, 26, 27, 4, 9, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 3, 8, 9, 10, 11, 15, 16, 17, 18, 20, 21, 22, 24, 25, 26, 27, 28, 5, 6, 8, 9, 10, 11, 15, 17, 18, 19, 20, 22, 25, 26, 27, 28, 1, 2, 3, 6, 7, 10, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 28, 2, 3, 4, 5, 6, 7, 8, 11, 12, 13, 16, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 18, 19, 20, 22, 26, 27, 28, 3, 5, 6, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 22, 23, 25, 26, 27, 28, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 21, 25, 26, 27, 28};
+  private static final int[] expert15Rows = {1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14};
+  private static final int[] expert15Columns = {3, 4, 5, 9, 11, 16, 26, 1, 3, 4, 5, 7, 8, 9, 11, 16, 17, 18, 23, 28, 1, 2, 3, 4, 5, 9, 11, 13, 15, 16, 19, 20, 27, 28, 1, 2, 3, 4, 5, 7, 8, 9, 14, 15, 16, 18, 19, 21, 25, 26, 27, 28, 1, 2, 4, 6, 7, 8, 15, 19, 20, 27, 28, 1, 2, 3, 4, 5, 7, 9, 18, 24, 28, 1, 2, 3, 5, 6, 7, 8, 10, 11, 12, 13, 14, 28, 1, 2, 4, 5, 6, 7, 12, 13, 14, 19, 23, 1, 2, 3, 4, 7, 12, 13, 14, 16, 21, 23, 24, 4, 5, 8, 9, 11, 12, 19, 26, 27, 1, 9, 10, 14, 15, 17, 18, 5, 14, 17, 21, 23, 24, 25, 1, 2, 4, 7, 15, 18, 20, 21, 24, 1, 2, 3, 4, 5, 10, 11, 19, 20, 22, 23, 24};
+  private static final int[] expert12Rows = {1, 1};
+  private static final int[] expert12Columns = {1, 2};
+
   public void shiftMineOnFirstMove(int currentRow, int currentColumn) {
     int replacedCount = 0;
     for (int i = 0; i < 8; i++) {
@@ -933,7 +952,99 @@ public class Board {
   }
 
   public void expertFirstMove() {
-
+    Random random = new Random();
+    int p = random.nextInt(100);
+    if (p < 50) {
+      int q = random.nextInt(3);
+      if (cells[expert50Rows[q]][expert50Columns[q]].checkHasMine() == true) {
+        shiftMineOnFirstMove(expert50Rows[q], expert50Columns[q]);
+      }
+      openCell(expert50Rows[q], expert50Columns[q]);
+      System.out.println(expert50Rows[q] + " " + expert50Columns[q]);
+    }
+    else {
+      p = random.nextInt(100);
+      if (p < 40) {
+        if (cells[expert40Rows[0]][expert40Columns[0]].checkHasMine() == true) {
+          shiftMineOnFirstMove(expert40Rows[0], expert40Columns[0]);
+        }
+        openCell(expert40Rows[0], expert40Columns[0]);
+        System.out.println(expert40Rows[0] + " " + expert40Columns[0]);
+      }
+      else {
+        p = random.nextInt(100);
+        if (p < 32) {
+          int q = random.nextInt(12);
+          if (cells[expert32Rows[q]][expert32Columns[q]].checkHasMine() == true) {
+            shiftMineOnFirstMove(expert32Rows[q], expert32Columns[q]);
+          }
+          openCell(expert32Rows[q], expert32Columns[q]);
+          System.out.println(expert32Rows[q] + " " + expert32Columns[q]);
+        }
+        else {
+          p = random.nextInt(100);
+          if (p < 31) {
+            int q = random.nextInt(68);
+            if (cells[expert31Rows[q]][expert31Columns[q]].checkHasMine() == true) {
+              shiftMineOnFirstMove(expert31Rows[q], expert31Columns[q]);
+            }
+            openCell(expert31Rows[q], expert31Columns[q]);
+            System.out.println(expert31Rows[q] + " " + expert31Columns[q]);
+          }
+          else {
+            p = random.nextInt(100);
+            if (p < 30) {
+              if (cells[expert30Rows[0]][expert30Columns[0]].checkHasMine() == true) {
+                shiftMineOnFirstMove(expert30Rows[0], expert30Columns[0]);
+              }
+              openCell(expert30Rows[0], expert30Columns[0]);
+              System.out.println(expert30Rows[0] + " " + expert30Columns[0]);
+            }
+            else {
+              p = random.nextInt(100);
+              if (p < 25) {
+                int q = random.nextInt(3);
+                if (cells[expert25Rows[q]][expert25Columns[q]].checkHasMine() == true) {
+                  shiftMineOnFirstMove(expert25Rows[q], expert25Columns[q]);
+                }
+                openCell(expert25Rows[q], expert25Columns[q]);
+                System.out.println(expert25Rows[q] + " " + expert25Columns[q]);
+              }
+              else {
+                p = random.nextInt(100);
+                if (p < 16) {
+                  int q = random.nextInt(237);
+                  if (cells[expert16Rows[q]][expert16Columns[q]].checkHasMine() == true) {
+                    shiftMineOnFirstMove(expert16Rows[q], expert16Columns[q]);
+                  }
+                  openCell(expert16Rows[q], expert16Columns[q]);
+                  System.out.println(expert16Rows[q] + " " + expert16Columns[q]);
+                }
+                else {
+                  p = random.nextInt(100);
+                  if (p < 15) {
+                    int q = random.nextInt(153);
+                    if (cells[expert15Rows[q]][expert15Columns[q]].checkHasMine() == true) {
+                      shiftMineOnFirstMove(expert15Rows[q], expert15Columns[q]);
+                    }
+                    openCell(expert15Rows[q], expert15Columns[q]);
+                    System.out.println(expert15Rows[q] + " " + expert15Columns[q]);
+                  }
+                  else {
+                    int q = random.nextInt(2);
+                    if (cells[expert12Rows[q]][expert12Columns[q]].checkHasMine() == true) {
+                      shiftMineOnFirstMove(expert12Rows[q], expert12Columns[q]);
+                    }
+                    openCell(expert12Rows[q], expert12Columns[q]);
+                    System.out.println(expert12Rows[q] + " " + expert12Columns[q]);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   public boolean checkAllCellsOpenedOrFlagged() {
