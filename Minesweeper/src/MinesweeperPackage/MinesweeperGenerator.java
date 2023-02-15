@@ -15,10 +15,38 @@ public class MinesweeperGenerator {
   }
 
   public static void main(String[] args) {
-    //Scanner sc = new Scanner(System.in);
-    MinesweeperGenerator minesweeper = new MinesweeperGenerator(8, 8, 10);
+    Scanner difficulty = new Scanner(System.in);
+    System.out.println("Enter difficulty: (beginner, intermediate, expert) ");
+    String chosenDifficulty = difficulty.nextLine();
+    int rows = 0;
+    int columns = 0;
+    int numberOfMines = 0;
+    if (chosenDifficulty.equals("beginner")) {
+      rows = 8;
+      columns = 8;
+      numberOfMines = 10;
+    }
+    else if (chosenDifficulty.equals("intermediate")) {
+      rows = 16;
+      columns = 16;
+      numberOfMines = 40;
+    }
+    else if (chosenDifficulty.equals("expert")) {
+      rows = 16;
+      columns = 30;
+      numberOfMines = 99;
+    }
+    MinesweeperGenerator minesweeper = new MinesweeperGenerator(rows, columns, numberOfMines);
     //GameState gameState = GameState.ONGOING;
-    minesweeper.board.beginnerFirstMove();
+    if (chosenDifficulty.equals("beginner")) {
+      minesweeper.board.beginnerFirstMove();
+    }
+    else if (chosenDifficulty.equals("intermediate")) {
+      minesweeper.board.intermediateFirstMove();
+    }
+    else if (chosenDifficulty.equals("expert")) {
+      minesweeper.board.expertFirstMove();
+    }
     System.out.println("\n");
     minesweeper.board.displayBoardForSolving();
     System.out.println("Openings revealed");
