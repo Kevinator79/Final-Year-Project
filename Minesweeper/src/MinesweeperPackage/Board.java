@@ -743,10 +743,10 @@ public class Board {
   private static final int[] expert12Rows = {1, 1};
   private static final int[] expert12Columns = {1, 2};
 
-  public void shiftMineOnFirstMove(int currentRow, int currentColumn) {
+  public void shiftMineOnFirstMove(int currentRow, int currentColumn, int rows, int columns) {
     int replacedCount = 0;
-    for (int i = 0; i < 8; i++) {
-      for (int j = 0; j < 8; j++) {
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < columns; j++) {
         if (cells[i][j].checkHasMine() == false) {
           while (replacedCount == 0) {
             cells[i][j].setMine();
@@ -767,7 +767,7 @@ public class Board {
     if (p < 60) {
       int q = random.nextInt(3);
       if (cells[beginner60Rows[q]][beginner60Columns[q]].checkHasMine() == true) {
-        shiftMineOnFirstMove(beginner60Rows[q], beginner60Columns[q]);
+        shiftMineOnFirstMove(beginner60Rows[q], beginner60Columns[q], 8, 8);
       }
       openCell(beginner60Rows[q], beginner60Columns[q]);
       System.out.println(beginner60Rows[q] + " " + beginner60Columns[q]);
@@ -776,7 +776,7 @@ public class Board {
       p = random.nextInt(100);
       if (p < 50) {
         if (cells[beginner50Rows[0]][beginner50Columns[0]].checkHasMine() == true) {
-          shiftMineOnFirstMove(beginner50Rows[0], beginner50Columns[0]);
+          shiftMineOnFirstMove(beginner50Rows[0], beginner50Columns[0], 8, 8);
         }
         openCell(beginner50Rows[0], beginner50Columns[0]);
         System.out.println(beginner50Rows[0] + " " + beginner50Columns[0]);
@@ -786,7 +786,7 @@ public class Board {
         if (p < 42) {
           int q = random.nextInt(10);
           if (cells[beginner42Rows[q]][beginner42Columns[q]].checkHasMine() == true) {
-            shiftMineOnFirstMove(beginner42Rows[q], beginner42Columns[q]);
+            shiftMineOnFirstMove(beginner42Rows[q], beginner42Columns[q], 8, 8);
           }
           openCell(beginner42Rows[q], beginner42Columns[q]);
           System.out.println(beginner42Rows[q] + " " + beginner42Columns[q]);
@@ -796,7 +796,7 @@ public class Board {
           if (p < 41) {
             int q = random.nextInt(11);
             if (cells[beginner41Rows[q]][beginner41Columns[q]].checkHasMine() == true) {
-              shiftMineOnFirstMove(beginner41Rows[q], beginner41Columns[q]);
+              shiftMineOnFirstMove(beginner41Rows[q], beginner41Columns[q], 8, 8);
             }
             openCell(beginner41Rows[q], beginner41Columns[q]);
             System.out.println(beginner41Rows[q] + " " + beginner41Columns[q]);
@@ -805,7 +805,7 @@ public class Board {
             p = random.nextInt(100);
             if (p < 40) {
               if (cells[beginner40Rows[0]][beginner40Columns[0]].checkHasMine() == true) {
-                shiftMineOnFirstMove(beginner40Rows[0], beginner40Columns[0]);
+                shiftMineOnFirstMove(beginner40Rows[0], beginner40Columns[0], 8, 8);
               }
               openCell(beginner40Rows[0], beginner40Columns[0]);
               System.out.println(beginner40Rows[0] + " " + beginner40Columns[0]);
@@ -815,7 +815,7 @@ public class Board {
               if (p < 34) {
                 int q = random.nextInt(2);
                 if (cells[beginner34Rows[q]][beginner34Columns[q]].checkHasMine() == true) {
-                  shiftMineOnFirstMove(beginner34Rows[q], beginner34Columns[q]);
+                  shiftMineOnFirstMove(beginner34Rows[q], beginner34Columns[q], 8, 8);
                 }
                 openCell(beginner34Rows[q], beginner34Columns[q]);
                 System.out.println(beginner34Rows[q] + " " + beginner34Columns[q]);
@@ -825,7 +825,7 @@ public class Board {
                 if (p < 24) {
                   int q = random.nextInt(24);
                   if (cells[beginner24Rows[q]][beginner24Columns[q]].checkHasMine() == true) {
-                    shiftMineOnFirstMove(beginner24Rows[q], beginner24Columns[q]);
+                    shiftMineOnFirstMove(beginner24Rows[q], beginner24Columns[q], 8, 8);
                   }
                   openCell(beginner24Rows[q], beginner24Columns[q]);
                   System.out.println(beginner24Rows[q] + " " + beginner24Columns[q]);
@@ -835,14 +835,14 @@ public class Board {
                   if (p < 23) {
                     int q = random.nextInt(11);
                     if (cells[beginner23Rows[q]][beginner23Columns[q]].checkHasMine() == true) {
-                      shiftMineOnFirstMove(beginner23Rows[q], beginner23Columns[q]);
+                      shiftMineOnFirstMove(beginner23Rows[q], beginner23Columns[q], 8, 8);
                     }
                     openCell(beginner23Rows[q], beginner23Columns[q]);
                     System.out.println(beginner23Rows[q] + " " + beginner23Columns[q]);
                   }
                   else {
                     if (cells[beginner19Rows[0]][beginner19Columns[0]].checkHasMine() == true) {
-                      shiftMineOnFirstMove(beginner19Rows[0], beginner19Columns[0]);
+                      shiftMineOnFirstMove(beginner19Rows[0], beginner19Columns[0], 8, 8);
                     }
                     openCell(beginner19Rows[0], beginner19Columns[0]);
                     System.out.println(beginner19Rows[0] + " " + beginner19Columns[0]);
@@ -862,7 +862,7 @@ public class Board {
     if (p < 60) {
       int q = random.nextInt(3);
       if (cells[intermediate60Rows[q]][intermediate60Columns[q]].checkHasMine() == true) {
-        shiftMineOnFirstMove(intermediate60Rows[q], intermediate60Columns[q]);
+        shiftMineOnFirstMove(intermediate60Rows[q], intermediate60Columns[q], 16, 16);
       }
       openCell(intermediate60Rows[q], intermediate60Columns[q]);
       System.out.println(intermediate60Rows[q] + " " + intermediate60Columns[q]);
@@ -871,7 +871,7 @@ public class Board {
       p = random.nextInt(100);
       if (p < 50) {
         if (cells[intermediate50Rows[0]][intermediate50Columns[0]].checkHasMine() == true) {
-          shiftMineOnFirstMove(intermediate50Rows[0], intermediate50Columns[0]);
+          shiftMineOnFirstMove(intermediate50Rows[0], intermediate50Columns[0], 16, 16);
         }
         openCell(intermediate50Rows[0], intermediate50Columns[0]);
         System.out.println(intermediate50Rows[0] + " " + intermediate50Columns[0]);
@@ -881,7 +881,7 @@ public class Board {
         if (p < 43) {
           int q = random.nextInt(22);
           if (cells[intermediate43Rows[q]][intermediate43Columns[q]].checkHasMine() == true) {
-            shiftMineOnFirstMove(intermediate43Rows[q], intermediate43Columns[q]);
+            shiftMineOnFirstMove(intermediate43Rows[q], intermediate43Columns[q], 16, 16);
           }
           openCell(intermediate43Rows[q], intermediate43Columns[q]);
           System.out.println(intermediate43Rows[q] + " " + intermediate43Columns[q]);
@@ -891,7 +891,7 @@ public class Board {
           if (p < 42) {
             int q = random.nextInt(31);
             if (cells[intermediate42Rows[q]][intermediate42Columns[q]].checkHasMine() == true) {
-              shiftMineOnFirstMove(intermediate42Rows[q], intermediate42Columns[q]);
+              shiftMineOnFirstMove(intermediate42Rows[q], intermediate42Columns[q], 16, 16);
             }
             openCell(intermediate42Rows[q], intermediate42Columns[q]);
             System.out.println(intermediate42Rows[q] + " " + intermediate42Columns[q]);
@@ -900,7 +900,7 @@ public class Board {
             p = random.nextInt(100);
             if (p < 41) {
               if (cells[intermediate41Rows[0]][intermediate41Columns[0]].checkHasMine() == true) {
-                shiftMineOnFirstMove(intermediate41Rows[0], intermediate41Columns[0]);
+                shiftMineOnFirstMove(intermediate41Rows[0], intermediate41Columns[0], 16, 16);
               }
               openCell(intermediate41Rows[0], intermediate41Columns[0]);
               System.out.println(intermediate41Rows[0] + " " + intermediate41Columns[0]);
@@ -910,7 +910,7 @@ public class Board {
               if (p < 36) {
                 int q = random.nextInt(2);
                 if (cells[intermediate36Rows[q]][intermediate36Columns[q]].checkHasMine() == true) {
-                  shiftMineOnFirstMove(intermediate36Rows[q], intermediate36Columns[q]);
+                  shiftMineOnFirstMove(intermediate36Rows[q], intermediate36Columns[q], 16, 16);
                 }
                 openCell(intermediate36Rows[q], intermediate36Columns[q]);
                 System.out.println(intermediate36Rows[q] + " " + intermediate36Columns[q]);
@@ -920,7 +920,7 @@ public class Board {
                 if (p < 26) {
                   int q = random.nextInt(5);
                   if (cells[intermediate26Rows[q]][intermediate26Columns[q]].checkHasMine() == true) {
-                    shiftMineOnFirstMove(intermediate26Rows[q], intermediate26Columns[q]);
+                    shiftMineOnFirstMove(intermediate26Rows[q], intermediate26Columns[q], 16, 16);
                   }
                   openCell(intermediate26Rows[q], intermediate26Columns[q]);
                   System.out.println(intermediate26Rows[q] + " " + intermediate26Columns[q]);
@@ -930,14 +930,14 @@ public class Board {
                   if (p < 25) {
                     int q = random.nextInt(190);
                     if (cells[intermediate25Rows[q]][intermediate25Columns[q]].checkHasMine() == true) {
-                      shiftMineOnFirstMove(intermediate25Rows[q], intermediate25Columns[q]);
+                      shiftMineOnFirstMove(intermediate25Rows[q], intermediate25Columns[q], 16, 16);
                     }
                     openCell(intermediate25Rows[q], intermediate25Columns[q]);
                     System.out.println(intermediate25Rows[q] + " " + intermediate25Columns[q]);
                   }
                   else {
                     if (cells[intermediate21Rows[0]][intermediate21Columns[0]].checkHasMine() == true) {
-                      shiftMineOnFirstMove(intermediate21Rows[0], intermediate21Columns[0]);
+                      shiftMineOnFirstMove(intermediate21Rows[0], intermediate21Columns[0], 16, 16);
                     }
                     openCell(intermediate21Rows[0], intermediate21Columns[0]);
                     System.out.println(intermediate21Rows[0] + " " + intermediate21Columns[0]);
@@ -957,7 +957,7 @@ public class Board {
     if (p < 50) {
       int q = random.nextInt(3);
       if (cells[expert50Rows[q]][expert50Columns[q]].checkHasMine() == true) {
-        shiftMineOnFirstMove(expert50Rows[q], expert50Columns[q]);
+        shiftMineOnFirstMove(expert50Rows[q], expert50Columns[q], 16, 30);
       }
       openCell(expert50Rows[q], expert50Columns[q]);
       System.out.println(expert50Rows[q] + " " + expert50Columns[q]);
@@ -966,7 +966,7 @@ public class Board {
       p = random.nextInt(100);
       if (p < 40) {
         if (cells[expert40Rows[0]][expert40Columns[0]].checkHasMine() == true) {
-          shiftMineOnFirstMove(expert40Rows[0], expert40Columns[0]);
+          shiftMineOnFirstMove(expert40Rows[0], expert40Columns[0], 16, 30);
         }
         openCell(expert40Rows[0], expert40Columns[0]);
         System.out.println(expert40Rows[0] + " " + expert40Columns[0]);
@@ -976,7 +976,7 @@ public class Board {
         if (p < 32) {
           int q = random.nextInt(12);
           if (cells[expert32Rows[q]][expert32Columns[q]].checkHasMine() == true) {
-            shiftMineOnFirstMove(expert32Rows[q], expert32Columns[q]);
+            shiftMineOnFirstMove(expert32Rows[q], expert32Columns[q], 16, 30);
           }
           openCell(expert32Rows[q], expert32Columns[q]);
           System.out.println(expert32Rows[q] + " " + expert32Columns[q]);
@@ -986,7 +986,7 @@ public class Board {
           if (p < 31) {
             int q = random.nextInt(68);
             if (cells[expert31Rows[q]][expert31Columns[q]].checkHasMine() == true) {
-              shiftMineOnFirstMove(expert31Rows[q], expert31Columns[q]);
+              shiftMineOnFirstMove(expert31Rows[q], expert31Columns[q], 16, 30);
             }
             openCell(expert31Rows[q], expert31Columns[q]);
             System.out.println(expert31Rows[q] + " " + expert31Columns[q]);
@@ -995,7 +995,7 @@ public class Board {
             p = random.nextInt(100);
             if (p < 30) {
               if (cells[expert30Rows[0]][expert30Columns[0]].checkHasMine() == true) {
-                shiftMineOnFirstMove(expert30Rows[0], expert30Columns[0]);
+                shiftMineOnFirstMove(expert30Rows[0], expert30Columns[0], 16, 30);
               }
               openCell(expert30Rows[0], expert30Columns[0]);
               System.out.println(expert30Rows[0] + " " + expert30Columns[0]);
@@ -1005,7 +1005,7 @@ public class Board {
               if (p < 25) {
                 int q = random.nextInt(3);
                 if (cells[expert25Rows[q]][expert25Columns[q]].checkHasMine() == true) {
-                  shiftMineOnFirstMove(expert25Rows[q], expert25Columns[q]);
+                  shiftMineOnFirstMove(expert25Rows[q], expert25Columns[q], 16, 30);
                 }
                 openCell(expert25Rows[q], expert25Columns[q]);
                 System.out.println(expert25Rows[q] + " " + expert25Columns[q]);
@@ -1015,7 +1015,7 @@ public class Board {
                 if (p < 16) {
                   int q = random.nextInt(237);
                   if (cells[expert16Rows[q]][expert16Columns[q]].checkHasMine() == true) {
-                    shiftMineOnFirstMove(expert16Rows[q], expert16Columns[q]);
+                    shiftMineOnFirstMove(expert16Rows[q], expert16Columns[q], 16, 30);
                   }
                   openCell(expert16Rows[q], expert16Columns[q]);
                   System.out.println(expert16Rows[q] + " " + expert16Columns[q]);
@@ -1025,7 +1025,7 @@ public class Board {
                   if (p < 15) {
                     int q = random.nextInt(153);
                     if (cells[expert15Rows[q]][expert15Columns[q]].checkHasMine() == true) {
-                      shiftMineOnFirstMove(expert15Rows[q], expert15Columns[q]);
+                      shiftMineOnFirstMove(expert15Rows[q], expert15Columns[q], 16, 30);
                     }
                     openCell(expert15Rows[q], expert15Columns[q]);
                     System.out.println(expert15Rows[q] + " " + expert15Columns[q]);
@@ -1033,7 +1033,7 @@ public class Board {
                   else {
                     int q = random.nextInt(2);
                     if (cells[expert12Rows[q]][expert12Columns[q]].checkHasMine() == true) {
-                      shiftMineOnFirstMove(expert12Rows[q], expert12Columns[q]);
+                      shiftMineOnFirstMove(expert12Rows[q], expert12Columns[q], 16, 30);
                     }
                     openCell(expert12Rows[q], expert12Columns[q]);
                     System.out.println(expert12Rows[q] + " " + expert12Columns[q]);
