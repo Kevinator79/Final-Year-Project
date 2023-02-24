@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class MinesweeperGenerator {
   private Board board;
-  private enum GameState {ONGOING, WON, LOST};
 
   public MinesweeperGenerator (int rows, int columns, int numberOfMines) {
     board = new Board(rows, columns, numberOfMines);
@@ -37,7 +36,6 @@ public class MinesweeperGenerator {
       numberOfMines = 99;
     }
     MinesweeperGenerator minesweeper = new MinesweeperGenerator(rows, columns, numberOfMines);
-    //GameState gameState = GameState.ONGOING;
     if (chosenDifficulty.equals("beginner")) {
       minesweeper.board.beginnerFirstMove();
     }
@@ -50,15 +48,13 @@ public class MinesweeperGenerator {
     System.out.println("\n");
     minesweeper.board.displayBoardForSolving();
     System.out.println("Openings revealed");
-    while (minesweeper.board.checkAllCellsOpenedOrFlagged() == false) {
+    while (minesweeper.board.checkAllCellsOpenedOrFlagged() != (rows * columns)) {
       Scanner sc = new Scanner(System.in);
       System.out.println("Enter row number - 1: "); //remember 0 indexed
       int row = sc.nextInt();
       System.out.println("Enter column number - 1: "); //remember 0 indexed
       int column = sc.nextInt();
       minesweeper.board.playMove(row, column);
-      System.out.println("Done?: " + minesweeper.board.checkAllCellsOpenedOrFlagged());
-      System.out.println("Finish loop");
     }
     System.out.println("End Test");
   }

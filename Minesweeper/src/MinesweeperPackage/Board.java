@@ -1047,15 +1047,16 @@ public class Board {
     }
   }
 
-  public boolean checkAllCellsOpenedOrFlagged() {
+  public int checkAllCellsOpenedOrFlagged() {
+    int openedOrFlaggedCounter = 0;
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < columns; j++) {
         if (((cells[i][j].checkBeenOpened() == false) && (cells[i][j].checkBeenFlagged() == true)) || ((cells[i][j].checkBeenOpened() == true) && (cells[i][j].checkBeenFlagged() == false))) { //xor
-          return false;
+          openedOrFlaggedCounter++;
         }
       }
     }
-    return true;
+    return openedOrFlaggedCounter;
   }
 
   public boolean playMove(int row, int column) {
