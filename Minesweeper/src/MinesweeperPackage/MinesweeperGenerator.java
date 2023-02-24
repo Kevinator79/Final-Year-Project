@@ -50,13 +50,15 @@ public class MinesweeperGenerator {
     System.out.println("\n");
     minesweeper.board.displayBoardForSolving();
     System.out.println("Openings revealed");
-    while ((minesweeper.board.checkAllCellsOpenedOrFlagged() == false)/* && (!(gameState == GameState.LOST))*/) {
+    while (minesweeper.board.checkAllCellsOpenedOrFlagged() == false) {
       Scanner sc = new Scanner(System.in);
       System.out.println("Enter row number - 1: "); //remember 0 indexed
       int row = sc.nextInt();
       System.out.println("Enter column number - 1: "); //remember 0 indexed
       int column = sc.nextInt();
       minesweeper.board.playMove(row, column);
+      System.out.println("Done?: " + minesweeper.board.checkAllCellsOpenedOrFlagged());
+      System.out.println("Finish loop");
     }
     System.out.println("End Test");
   }

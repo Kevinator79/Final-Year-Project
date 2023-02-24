@@ -1050,7 +1050,7 @@ public class Board {
   public boolean checkAllCellsOpenedOrFlagged() {
     for (int i = 0; i < rows; i++) {
       for (int j = 0; j < columns; j++) {
-        if ((cells[i][j].checkBeenOpened() == false) || (cells[i][j].checkBeenFlagged() == false)) {
+        if (((cells[i][j].checkBeenOpened() == false) && (cells[i][j].checkBeenFlagged() == true)) || ((cells[i][j].checkBeenOpened() == true) && (cells[i][j].checkBeenFlagged() == false))) { //xor
           return false;
         }
       }
