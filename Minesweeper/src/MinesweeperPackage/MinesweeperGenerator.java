@@ -17,6 +17,7 @@ public class MinesweeperGenerator {
     Scanner difficulty = new Scanner(System.in);
     System.out.println("Enter difficulty: (beginner, intermediate, expert) ");
     String chosenDifficulty = difficulty.nextLine();
+    //set parameters depending on difficulty
     int rows = 0;
     int columns = 0;
     int numberOfMines = 0;
@@ -35,9 +36,11 @@ public class MinesweeperGenerator {
       columns = 30;
       numberOfMines = 99;
     }
+    //set up a new board
     MinesweeperGenerator minesweeper = new MinesweeperGenerator(rows, columns, numberOfMines);
+    //choose firstMove depending on difficulty
     if (chosenDifficulty.equals("beginner")) {
-      minesweeper.board.beginnerFirstMove();
+      minesweeper.board.beginnerFirstMove(1);
     }
     else if (chosenDifficulty.equals("intermediate")) {
       minesweeper.board.intermediateFirstMove();

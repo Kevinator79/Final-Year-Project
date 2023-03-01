@@ -761,13 +761,13 @@ public class Board {
     displayGeneratedBoard();
   }
 
-  public void beginnerFirstMove() {
+  public void beginnerFirstMove(int firstMoveCheck) {
     Random random = new Random();
     int p = random.nextInt(100);
     int setCounter = 0;
     if (p < 60) {
       int q = random.nextInt(3);
-      if (cells[beginner60Rows[q]][beginner60Columns[q]].checkHasMine() == true) {
+      if ((cells[beginner60Rows[q]][beginner60Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) { //only shift mines on first move; 1 == first move
         shiftMineOnFirstMove(beginner60Rows[q], beginner60Columns[q], 8, 8);
       }
       setCounter = 0;
@@ -776,7 +776,7 @@ public class Board {
         setCounter++;
       }
       if (setCounter == 3) {
-        beginnerFirstMove();
+        beginnerFirstMove(2);
       }
       openCell(beginner60Rows[q], beginner60Columns[q]);
       System.out.println(beginner60Rows[q] + " " + beginner60Columns[q]);
@@ -784,11 +784,11 @@ public class Board {
     else {
       p = random.nextInt(100);
       if (p < 50) {
-        if (cells[beginner50Rows[0]][beginner50Columns[0]].checkHasMine() == true) {
+        if ((cells[beginner50Rows[0]][beginner50Columns[0]].checkHasMine() == true) && (firstMoveCheck == 1)) {
           shiftMineOnFirstMove(beginner50Rows[0], beginner50Columns[0], 8, 8);
         }
         if (cells[beginner50Rows[0]][beginner50Columns[0]].checkBeenOpened() == true) {
-          beginnerFirstMove();
+          beginnerFirstMove(2);
         }
         openCell(beginner50Rows[0], beginner50Columns[0]);
         System.out.println(beginner50Rows[0] + " " + beginner50Columns[0]);
@@ -797,7 +797,7 @@ public class Board {
         p = random.nextInt(100);
         if (p < 42) {
           int q = random.nextInt(10);
-          if (cells[beginner42Rows[q]][beginner42Columns[q]].checkHasMine() == true) {
+          if ((cells[beginner42Rows[q]][beginner42Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
             shiftMineOnFirstMove(beginner42Rows[q], beginner42Columns[q], 8, 8);
           }
           setCounter = 0;
@@ -806,7 +806,7 @@ public class Board {
             setCounter++;
           }
           if (setCounter == 10) {
-            beginnerFirstMove();
+            beginnerFirstMove(2);
           }
           openCell(beginner42Rows[q], beginner42Columns[q]);
           System.out.println(beginner42Rows[q] + " " + beginner42Columns[q]);
@@ -815,7 +815,7 @@ public class Board {
           p = random.nextInt(100);
           if (p < 41) {
             int q = random.nextInt(11);
-            if (cells[beginner41Rows[q]][beginner41Columns[q]].checkHasMine() == true) {
+            if ((cells[beginner41Rows[q]][beginner41Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
               shiftMineOnFirstMove(beginner41Rows[q], beginner41Columns[q], 8, 8);
             }
             setCounter = 0;
@@ -824,7 +824,7 @@ public class Board {
               setCounter++;
             }
             if (setCounter == 11) {
-              beginnerFirstMove();
+              beginnerFirstMove(2);
             }
             openCell(beginner41Rows[q], beginner41Columns[q]);
             System.out.println(beginner41Rows[q] + " " + beginner41Columns[q]);
@@ -832,11 +832,11 @@ public class Board {
           else {
             p = random.nextInt(100);
             if (p < 40) {
-              if (cells[beginner40Rows[0]][beginner40Columns[0]].checkHasMine() == true) {
+              if ((cells[beginner40Rows[0]][beginner40Columns[0]].checkHasMine() == true) && (firstMoveCheck == 1)) {
                 shiftMineOnFirstMove(beginner40Rows[0], beginner40Columns[0], 8, 8);
               }
               if (cells[beginner40Rows[0]][beginner40Columns[0]].checkBeenOpened() == true) {
-                beginnerFirstMove();
+                beginnerFirstMove(2);
               }
               openCell(beginner40Rows[0], beginner40Columns[0]);
               System.out.println(beginner40Rows[0] + " " + beginner40Columns[0]);
@@ -845,7 +845,7 @@ public class Board {
               p = random.nextInt(100);
               if (p < 34) {
                 int q = random.nextInt(2);
-                if (cells[beginner34Rows[q]][beginner34Columns[q]].checkHasMine() == true) {
+                if ((cells[beginner34Rows[q]][beginner34Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
                   shiftMineOnFirstMove(beginner34Rows[q], beginner34Columns[q], 8, 8);
                 }
                 setCounter = 0;
@@ -854,7 +854,7 @@ public class Board {
                   setCounter++;
                 }
                 if (setCounter == 2) {
-                  beginnerFirstMove();
+                  beginnerFirstMove(2);
                 }
                 openCell(beginner34Rows[q], beginner34Columns[q]);
                 System.out.println(beginner34Rows[q] + " " + beginner34Columns[q]);
@@ -863,7 +863,7 @@ public class Board {
                 p = random.nextInt(100);
                 if (p < 24) {
                   int q = random.nextInt(24);
-                  if (cells[beginner24Rows[q]][beginner24Columns[q]].checkHasMine() == true) {
+                  if ((cells[beginner24Rows[q]][beginner24Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
                     shiftMineOnFirstMove(beginner24Rows[q], beginner24Columns[q], 8, 8);
                   }
                   setCounter = 0;
@@ -872,7 +872,7 @@ public class Board {
                     setCounter++;
                   }
                   if (setCounter == 24) {
-                    beginnerFirstMove();
+                    beginnerFirstMove(2);
                   }
                   openCell(beginner24Rows[q], beginner24Columns[q]);
                   System.out.println(beginner24Rows[q] + " " + beginner24Columns[q]);
@@ -881,7 +881,7 @@ public class Board {
                   p = random.nextInt(100);
                   if (p < 23) {
                     int q = random.nextInt(11);
-                    if (cells[beginner23Rows[q]][beginner23Columns[q]].checkHasMine() == true) {
+                    if ((cells[beginner23Rows[q]][beginner23Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
                       shiftMineOnFirstMove(beginner23Rows[q], beginner23Columns[q], 8, 8);
                     }
                     setCounter = 0;
@@ -890,17 +890,17 @@ public class Board {
                       setCounter++;
                     }
                     if (setCounter == 11) {
-                      beginnerFirstMove();
+                      beginnerFirstMove(2);
                     }
                     openCell(beginner23Rows[q], beginner23Columns[q]);
                     System.out.println(beginner23Rows[q] + " " + beginner23Columns[q]);
                   }
                   else {
-                    if (cells[beginner19Rows[0]][beginner19Columns[0]].checkHasMine() == true) {
+                    if ((cells[beginner19Rows[0]][beginner19Columns[0]].checkHasMine() == true) && (firstMoveCheck == 1)) {
                       shiftMineOnFirstMove(beginner19Rows[0], beginner19Columns[0], 8, 8);
                     }
                     if (cells[beginner19Rows[0]][beginner19Columns[0]].checkBeenOpened() == true) {
-                      beginnerFirstMove();
+                      beginnerFirstMove(2);
                     }
                     openCell(beginner19Rows[0], beginner19Columns[0]);
                     System.out.println(beginner19Rows[0] + " " + beginner19Columns[0]);
