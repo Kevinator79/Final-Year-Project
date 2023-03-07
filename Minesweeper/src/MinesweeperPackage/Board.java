@@ -686,24 +686,206 @@ public class Board {
     }
   }
 
-  private static final int[] beginner60Rows = {0, 7, 7};
-  private static final int[] beginner60Columns = {7, 0, 7};
-  private static final int[] beginner50Rows = {0};
-  private static final int[] beginner50Columns = {0};
-  private static final int[] beginner42Rows = {0, 0, 3, 4, 5, 6, 6, 7, 7, 7};
-  private static final int[] beginner42Columns = {3, 6, 0, 7, 7, 0, 7, 1, 4, 5};
-  private static final int[] beginner41Rows = {0, 0, 1, 2, 2, 3, 4, 5, 7, 7, 7};
-  private static final int[] beginner41Columns = {4, 5, 7, 0, 7, 7, 0, 0, 2, 3, 6};
-  private static final int[] beginner40Rows = {0};
-  private static final int[] beginner40Columns = {2};
-  private static final int[] beginner34Rows = {0, 1};
-  private static final int[] beginner34Columns = {1, 0};
-  private static final int[] beginner24Rows = {1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6};
-  private static final int[] beginner24Columns = {3, 6, 1, 3, 4, 5, 6, 1, 2, 3, 5, 6, 2, 3, 5, 6, 2, 3, 4, 5, 1, 2, 4, 5};
-  private static final int[] beginner23Rows = {1, 1, 1, 2, 3, 4, 4, 5, 5, 6, 6};
-  private static final int[] beginner23Columns = {2, 4, 5, 2, 4, 1, 4, 1, 6, 3, 6};
-  private static final int[] beginner19Rows = {1};
-  private static final int[] beginner19Columns = {1};
+  public static ArrayList<Integer> beginner60Rows() {
+    ArrayList<Integer> beginner60Rows = new ArrayList<Integer>();
+    beginner60Rows.add(0);
+    beginner60Rows.add(7);
+    beginner60Rows.add(7);
+    return beginner60Rows;
+  }
+  public static ArrayList<Integer> beginner60Columns() {
+    ArrayList<Integer> beginner60Columns = new ArrayList<Integer>();
+    beginner60Columns.add(7);
+    beginner60Columns.add(0);
+    beginner60Columns.add(7);
+    return beginner60Columns;
+  }
+  public static ArrayList<Integer> beginner50Rows() {
+    ArrayList<Integer> beginner50Rows = new ArrayList<Integer>();
+    beginner50Rows.add(0);
+    return beginner50Rows;
+  }
+  public static ArrayList<Integer> beginner50Columns() {
+    ArrayList<Integer> beginner50Columns = new ArrayList<Integer>();
+    beginner50Columns.add(0);
+    return beginner50Columns;
+  }
+  public static ArrayList<Integer> beginner42Rows() {
+    ArrayList<Integer> beginner42Rows = new ArrayList<Integer>();
+    beginner42Rows.add(0);
+    beginner42Rows.add(0);
+    beginner42Rows.add(3);
+    beginner42Rows.add(4);
+    beginner42Rows.add(5);
+    beginner42Rows.add(6);
+    beginner42Rows.add(6);
+    beginner42Rows.add(7);
+    beginner42Rows.add(7);
+    beginner42Rows.add(7);
+    return beginner42Rows;
+  }
+  public static ArrayList<Integer> beginner42Columns() {
+    ArrayList<Integer> beginner42Columns = new ArrayList<Integer>();
+    beginner42Columns.add(3);
+    beginner42Columns.add(6);
+    beginner42Columns.add(0);
+    beginner42Columns.add(7);
+    beginner42Columns.add(7);
+    beginner42Columns.add(0);
+    beginner42Columns.add(7);
+    beginner42Columns.add(1);
+    beginner42Columns.add(4);
+    beginner42Columns.add(5);
+    return beginner42Columns;
+  }
+  public static ArrayList<Integer> beginner41Rows() {
+    ArrayList<Integer> beginner41Rows = new ArrayList<Integer>();
+    beginner41Rows.add(0);
+    beginner41Rows.add(0);
+    beginner41Rows.add(1);
+    beginner41Rows.add(2);
+    beginner41Rows.add(2);
+    beginner41Rows.add(3);
+    beginner41Rows.add(4);
+    beginner41Rows.add(5);
+    beginner41Rows.add(7);
+    beginner41Rows.add(7);
+    beginner41Rows.add(7);
+    return beginner41Rows;
+  }
+  public static ArrayList<Integer> beginner41Columns() {
+    ArrayList<Integer> beginner41Columns = new ArrayList<Integer>();
+    beginner41Columns.add(4);
+    beginner41Columns.add(5);
+    beginner41Columns.add(7);
+    beginner41Columns.add(0);
+    beginner41Columns.add(7);
+    beginner41Columns.add(7);
+    beginner41Columns.add(0);
+    beginner41Columns.add(0);
+    beginner41Columns.add(2);
+    beginner41Columns.add(3);
+    beginner41Columns.add(6);
+    return beginner41Columns;
+  }
+  public static ArrayList<Integer> beginner40Rows() {
+    ArrayList<Integer> beginner40Rows = new ArrayList<Integer>();
+    beginner40Rows.add(0);
+    return beginner40Rows;
+  }
+  public static ArrayList<Integer> beginner40Columns() {
+    ArrayList<Integer> beginner40Columns = new ArrayList<Integer>();
+    beginner40Columns.add(2);
+    return beginner40Columns;
+  }
+  public static ArrayList<Integer> beginner34Rows() {
+    ArrayList<Integer> beginner34Rows = new ArrayList<Integer>();
+    beginner34Rows.add(0);
+    beginner34Rows.add(1);
+    return beginner34Rows;
+  }
+  public static ArrayList<Integer> beginner34Columns() {
+    ArrayList<Integer> beginner34Columns = new ArrayList<Integer>();
+    beginner34Columns.add(1);
+    beginner34Columns.add(0);
+    return beginner34Columns;
+  }
+  public static ArrayList<Integer> beginner24Rows() {
+    ArrayList<Integer> beginner24Rows = new ArrayList<Integer>();
+    beginner24Rows.add(1);
+    beginner24Rows.add(1);
+    beginner24Rows.add(2);
+    beginner24Rows.add(2);
+    beginner24Rows.add(2);
+    beginner24Rows.add(2);
+    beginner24Rows.add(2);
+    beginner24Rows.add(3);
+    beginner24Rows.add(3);
+    beginner24Rows.add(3);
+    beginner24Rows.add(3);
+    beginner24Rows.add(3);
+    beginner24Rows.add(4);
+    beginner24Rows.add(4);
+    beginner24Rows.add(4);
+    beginner24Rows.add(4);
+    beginner24Rows.add(5);
+    beginner24Rows.add(5);
+    beginner24Rows.add(5);
+    beginner24Rows.add(5);
+    beginner24Rows.add(6);
+    beginner24Rows.add(6);
+    beginner24Rows.add(6);
+    beginner24Rows.add(6);
+    return beginner24Rows;
+  }
+  public static ArrayList<Integer> beginner24Columns() {
+    ArrayList<Integer> beginner24Columns = new ArrayList<Integer>();
+    beginner24Columns.add(3);
+    beginner24Columns.add(6);
+    beginner24Columns.add(1);
+    beginner24Columns.add(3);
+    beginner24Columns.add(4);
+    beginner24Columns.add(5);
+    beginner24Columns.add(6);
+    beginner24Columns.add(1);
+    beginner24Columns.add(2);
+    beginner24Columns.add(3);
+    beginner24Columns.add(5);
+    beginner24Columns.add(6);
+    beginner24Columns.add(2);
+    beginner24Columns.add(3);
+    beginner24Columns.add(5);
+    beginner24Columns.add(6);
+    beginner24Columns.add(2);
+    beginner24Columns.add(3);
+    beginner24Columns.add(4);
+    beginner24Columns.add(5);
+    beginner24Columns.add(1);
+    beginner24Columns.add(2);
+    beginner24Columns.add(4);
+    beginner24Columns.add(5);
+    return beginner24Columns;
+  }
+  public static ArrayList<Integer> beginner23Rows() {
+    ArrayList<Integer> beginner23Rows = new ArrayList<Integer>();
+    beginner23Rows.add(1);
+    beginner23Rows.add(1);
+    beginner23Rows.add(1);
+    beginner23Rows.add(2);
+    beginner23Rows.add(3);
+    beginner23Rows.add(4);
+    beginner23Rows.add(4);
+    beginner23Rows.add(5);
+    beginner23Rows.add(5);
+    beginner23Rows.add(6);
+    beginner23Rows.add(6);
+    return beginner23Rows;
+  }
+  public static ArrayList<Integer> beginner23Columns() {
+    ArrayList<Integer> beginner23Columns = new ArrayList<Integer>();
+    beginner23Columns.add(2);
+    beginner23Columns.add(4);
+    beginner23Columns.add(5);
+    beginner23Columns.add(2);
+    beginner23Columns.add(4);
+    beginner23Columns.add(1);
+    beginner23Columns.add(4);
+    beginner23Columns.add(1);
+    beginner23Columns.add(6);
+    beginner23Columns.add(3);
+    beginner23Columns.add(6);
+    return beginner23Columns;
+  }
+  public static ArrayList<Integer> beginner19Rows() {
+    ArrayList<Integer> beginner19Rows = new ArrayList<Integer>();
+    beginner19Rows.add(1);
+    return beginner19Rows;
+  }
+  public static ArrayList<Integer> beginner19Columns() {
+    ArrayList<Integer> beginner19Columns = new ArrayList<Integer>();
+    beginner19Columns.add(1);
+    return beginner19Columns;
+  }
 
   private static final int[] intermediate60Rows = {0, 15, 15};
   private static final int[] intermediate60Columns = {15, 0, 15};
@@ -766,144 +948,174 @@ public class Board {
     int p = random.nextInt(100);
     int setCounter = 0;
     if (p < 60) {
+      ArrayList<Integer> beginner60Rows = beginner60Rows();
+      ArrayList<Integer> beginner60Columns = beginner60Columns();
       int q = random.nextInt(3);
-      if ((cells[beginner60Rows[q]][beginner60Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) { //only shift mines on first move; 1 == first move
-        shiftMineOnFirstMove(beginner60Rows[q], beginner60Columns[q], 8, 8);
+      if ((cells[beginner60Rows.get(q)][beginner60Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) { //only shift mines on first move; 1 == first move
+        shiftMineOnFirstMove(beginner60Rows.get(q), beginner60Columns.get(q), 8, 8);
       }
       setCounter = 0;
-      while (cells[beginner60Rows[q]][beginner60Columns[q]].checkBeenOpened() == true) {
-        q = random.nextInt(3);
+      while (cells[beginner60Rows.get(q)][beginner60Columns.get(q)].checkBeenOpened() == true) {
+        beginner60Rows.remove(q);
+        beginner60Columns.remove(q);
         setCounter++;
+        q = random.nextInt(3-setCounter);
       }
       if (setCounter == 3) {
         beginnerFirstMove(2);
       }
-      openCell(beginner60Rows[q], beginner60Columns[q]);
-      System.out.println(beginner60Rows[q] + " " + beginner60Columns[q]);
+      openCell(beginner60Rows.get(q), beginner60Columns.get(q));
+      System.out.println(beginner60Rows.get(q) + " " + beginner60Columns.get(q));
     }
     else {
       p = random.nextInt(100);
       if (p < 50) {
-        if ((cells[beginner50Rows[0]][beginner50Columns[0]].checkHasMine() == true) && (firstMoveCheck == 1)) {
-          shiftMineOnFirstMove(beginner50Rows[0], beginner50Columns[0], 8, 8);
+        ArrayList<Integer> beginner50Rows = beginner50Rows();
+        ArrayList<Integer> beginner50Columns = beginner50Columns();
+        if ((cells[beginner50Rows.get(0)][beginner50Columns.get(0)].checkHasMine() == true) && (firstMoveCheck == 1)) {
+          shiftMineOnFirstMove(beginner50Rows.get(0), beginner50Columns.get(0), 8, 8);
         }
-        if (cells[beginner50Rows[0]][beginner50Columns[0]].checkBeenOpened() == true) {
+        if (cells[beginner50Rows.get(0)][beginner50Columns.get(0)].checkBeenOpened() == true) {
           beginnerFirstMove(2);
         }
-        openCell(beginner50Rows[0], beginner50Columns[0]);
-        System.out.println(beginner50Rows[0] + " " + beginner50Columns[0]);
+        openCell(beginner50Rows.get(0), beginner50Columns.get(0));
+        System.out.println(beginner50Rows.get(0) + " " + beginner50Columns.get(0));
       }
       else {
         p = random.nextInt(100);
         if (p < 42) {
+          ArrayList<Integer> beginner42Rows = beginner42Rows();
+          ArrayList<Integer> beginner42Columns = beginner42Columns();
           int q = random.nextInt(10);
-          if ((cells[beginner42Rows[q]][beginner42Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
-            shiftMineOnFirstMove(beginner42Rows[q], beginner42Columns[q], 8, 8);
+          if ((cells[beginner42Rows.get(q)][beginner42Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
+            shiftMineOnFirstMove(beginner42Rows.get(q), beginner42Columns.get(q), 8, 8);
           }
           setCounter = 0;
-          while (cells[beginner42Rows[q]][beginner42Columns[q]].checkBeenOpened() == true) {
-            q = random.nextInt(10);
+          while (cells[beginner42Rows.get(q)][beginner42Columns.get(q)].checkBeenOpened() == true) {
+            beginner42Rows.remove(q);
+            beginner42Columns.remove(q);
             setCounter++;
+            q = random.nextInt(10-setCounter);
           }
           if (setCounter == 10) {
             beginnerFirstMove(2);
           }
-          openCell(beginner42Rows[q], beginner42Columns[q]);
-          System.out.println(beginner42Rows[q] + " " + beginner42Columns[q]);
+          openCell(beginner42Rows.get(q), beginner42Columns.get(q));
+          System.out.println(beginner42Rows.get(q) + " " + beginner42Columns.get(q));
         }
         else {
           p = random.nextInt(100);
           if (p < 41) {
+            ArrayList<Integer> beginner41Rows = beginner41Rows();
+            ArrayList<Integer> beginner41Columns = beginner41Columns();
             int q = random.nextInt(11);
-            if ((cells[beginner41Rows[q]][beginner41Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
-              shiftMineOnFirstMove(beginner41Rows[q], beginner41Columns[q], 8, 8);
+            if ((cells[beginner41Rows.get(q)][beginner41Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
+              shiftMineOnFirstMove(beginner41Rows.get(q), beginner41Columns.get(q), 8, 8);
             }
             setCounter = 0;
-            while (cells[beginner41Rows[q]][beginner41Columns[q]].checkBeenOpened() == true) {
-              q = random.nextInt(11);
+            while (cells[beginner41Rows.get(q)][beginner41Columns.get(q)].checkBeenOpened() == true) {
+              beginner41Rows.remove(q);
+              beginner41Columns.remove(q);
               setCounter++;
+              q = random.nextInt(11-setCounter);
             }
             if (setCounter == 11) {
               beginnerFirstMove(2);
             }
-            openCell(beginner41Rows[q], beginner41Columns[q]);
-            System.out.println(beginner41Rows[q] + " " + beginner41Columns[q]);
+            openCell(beginner41Rows.get(q), beginner41Columns.get(q));
+            System.out.println(beginner41Rows.get(q) + " " + beginner41Columns.get(q));
           }
           else {
             p = random.nextInt(100);
             if (p < 40) {
-              if ((cells[beginner40Rows[0]][beginner40Columns[0]].checkHasMine() == true) && (firstMoveCheck == 1)) {
-                shiftMineOnFirstMove(beginner40Rows[0], beginner40Columns[0], 8, 8);
+              ArrayList<Integer> beginner40Rows = beginner40Rows();
+              ArrayList<Integer> beginner40Columns = beginner40Columns();
+              if ((cells[beginner40Rows.get(0)][beginner40Columns.get(0)].checkHasMine() == true) && (firstMoveCheck == 1)) {
+                shiftMineOnFirstMove(beginner40Rows.get(0), beginner40Columns.get(0), 8, 8);
               }
-              if (cells[beginner40Rows[0]][beginner40Columns[0]].checkBeenOpened() == true) {
+              if (cells[beginner40Rows.get(0)][beginner40Columns.get(0)].checkBeenOpened() == true) {
                 beginnerFirstMove(2);
               }
-              openCell(beginner40Rows[0], beginner40Columns[0]);
-              System.out.println(beginner40Rows[0] + " " + beginner40Columns[0]);
+              openCell(beginner40Rows.get(0), beginner40Columns.get(0));
+              System.out.println(beginner40Rows.get(0) + " " + beginner40Columns.get(0));
             }
             else {
               p = random.nextInt(100);
               if (p < 34) {
+                ArrayList<Integer> beginner34Rows = beginner34Rows();
+                ArrayList<Integer> beginner34Columns = beginner34Columns();
                 int q = random.nextInt(2);
-                if ((cells[beginner34Rows[q]][beginner34Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
-                  shiftMineOnFirstMove(beginner34Rows[q], beginner34Columns[q], 8, 8);
+                if ((cells[beginner34Rows.get(q)][beginner34Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
+                  shiftMineOnFirstMove(beginner34Rows.get(q), beginner34Columns.get(q), 8, 8);
                 }
                 setCounter = 0;
-                while (cells[beginner34Rows[q]][beginner34Columns[q]].checkBeenOpened() == true) {
-                  q = random.nextInt(2);
+                while (cells[beginner34Rows.get(q)][beginner34Columns.get(q)].checkBeenOpened() == true) {
+                  beginner34Rows.remove(q);
+                  beginner34Columns.remove(q);
                   setCounter++;
+                  q = random.nextInt(2-setCounter);
                 }
                 if (setCounter == 2) {
                   beginnerFirstMove(2);
                 }
-                openCell(beginner34Rows[q], beginner34Columns[q]);
-                System.out.println(beginner34Rows[q] + " " + beginner34Columns[q]);
+                openCell(beginner34Rows.get(q), beginner34Columns.get(q));
+                System.out.println(beginner34Rows.get(q) + " " + beginner34Columns.get(q));
               }
               else {
                 p = random.nextInt(100);
                 if (p < 24) {
+                  ArrayList<Integer> beginner24Rows = beginner24Rows();
+                  ArrayList<Integer> beginner24Columns = beginner24Columns();
                   int q = random.nextInt(24);
-                  if ((cells[beginner24Rows[q]][beginner24Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
-                    shiftMineOnFirstMove(beginner24Rows[q], beginner24Columns[q], 8, 8);
+                  if ((cells[beginner24Rows.get(q)][beginner24Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
+                    shiftMineOnFirstMove(beginner24Rows.get(q), beginner24Columns.get(q), 8, 8);
                   }
                   setCounter = 0;
-                  while (cells[beginner24Rows[q]][beginner24Columns[q]].checkBeenOpened() == true) {
-                    q = random.nextInt(24);
+                  while (cells[beginner24Rows.get(q)][beginner24Columns.get(q)].checkBeenOpened() == true) {
+                    beginner24Rows.remove(q);
+                    beginner24Columns.remove(q);
                     setCounter++;
+                    q = random.nextInt(24-setCounter);
                   }
                   if (setCounter == 24) {
                     beginnerFirstMove(2);
                   }
-                  openCell(beginner24Rows[q], beginner24Columns[q]);
-                  System.out.println(beginner24Rows[q] + " " + beginner24Columns[q]);
+                  openCell(beginner24Rows.get(q), beginner24Columns.get(q));
+                  System.out.println(beginner24Rows.get(q) + " " + beginner24Columns.get(q));
                 }
                 else {
                   p = random.nextInt(100);
                   if (p < 23) {
+                    ArrayList<Integer> beginner23Rows = beginner23Rows();
+                    ArrayList<Integer> beginner23Columns = beginner23Columns();
                     int q = random.nextInt(11);
-                    if ((cells[beginner23Rows[q]][beginner23Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
-                      shiftMineOnFirstMove(beginner23Rows[q], beginner23Columns[q], 8, 8);
+                    if ((cells[beginner23Rows.get(q)][beginner23Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
+                      shiftMineOnFirstMove(beginner23Rows.get(q), beginner23Columns.get(q), 8, 8);
                     }
                     setCounter = 0;
-                    while (cells[beginner23Rows[q]][beginner23Columns[q]].checkBeenOpened() == true) {
-                      q = random.nextInt(11);
+                    while (cells[beginner23Rows.get(q)][beginner23Columns.get(q)].checkBeenOpened() == true) {
+                      beginner23Rows.remove(q);
+                      beginner23Columns.remove(q);
                       setCounter++;
+                      q = random.nextInt(11);
                     }
                     if (setCounter == 11) {
                       beginnerFirstMove(2);
                     }
-                    openCell(beginner23Rows[q], beginner23Columns[q]);
-                    System.out.println(beginner23Rows[q] + " " + beginner23Columns[q]);
+                    openCell(beginner23Rows.get(q), beginner23Columns.get(q));
+                    System.out.println(beginner23Rows.get(q) + " " + beginner23Columns.get(q));
                   }
                   else {
-                    if ((cells[beginner19Rows[0]][beginner19Columns[0]].checkHasMine() == true) && (firstMoveCheck == 1)) {
-                      shiftMineOnFirstMove(beginner19Rows[0], beginner19Columns[0], 8, 8);
+                    ArrayList<Integer> beginner19Rows = beginner19Rows();
+                    ArrayList<Integer> beginner19Columns = beginner19Columns();
+                    if ((cells[beginner19Rows.get(0)][beginner19Columns.get(0)].checkHasMine() == true) && (firstMoveCheck == 1)) {
+                      shiftMineOnFirstMove(beginner19Rows.get(0), beginner19Columns.get(0), 8, 8);
                     }
-                    if (cells[beginner19Rows[0]][beginner19Columns[0]].checkBeenOpened() == true) {
+                    if (cells[beginner19Rows.get(0)][beginner19Columns.get(0)].checkBeenOpened() == true) {
                       beginnerFirstMove(2);
                     }
-                    openCell(beginner19Rows[0], beginner19Columns[0]);
-                    System.out.println(beginner19Rows[0] + " " + beginner19Columns[0]);
+                    openCell(beginner19Rows.get(0), beginner19Columns.get(0));
+                    System.out.println(beginner19Rows.get(0) + " " + beginner19Columns.get(0));
                   }
                 }
               }
