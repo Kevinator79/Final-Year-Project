@@ -887,24 +887,590 @@ public class Board {
     return beginner19Columns;
   }
 
-  private static final int[] intermediate60Rows = {0, 15, 15};
-  private static final int[] intermediate60Columns = {15, 0, 15};
-  private static final int[] intermediate50Rows = {0};
-  private static final int[] intermediate50Columns = {0};
-  private static final int[] intermediate43Rows = {0, 0, 0, 0, 2, 4, 6, 6, 7, 9, 9, 10, 12, 13, 14, 14, 15, 15, 15, 15, 15, 15};
-  private static final int[] intermediate43Columns = {3, 4, 6, 11, 0, 15, 0, 15, 15, 0, 15, 15, 15, 0, 0, 15, 1, 7, 8, 9, 10, 12};
-  private static final int[] intermediate42Rows = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 4, 5, 5, 7, 8, 8, 10, 11, 11, 12, 13, 15, 15, 15, 15, 15, 15, 15, 15};
-  private static final int[] intermediate42Columns = {5, 7, 8, 9, 10, 12, 13, 14, 15, 15, 0, 15, 0, 0, 15, 0, 0, 15, 0, 0, 15, 0, 15, 2, 3, 4, 5, 6, 11, 13, 14};
-  private static final int[] intermediate41Rows = {0};
-  private static final int[] intermediate41Columns = {2};
-  private static final int[] intermediate36Rows = {0, 1};
-  private static final int[] intermediate36Columns = {1, 0};
-  private static final int[] intermediate26Rows = {3, 5, 9, 11, 13};
-  private static final int[] intermediate26Columns = {12, 6, 10, 4, 14};
-  private static final int[] intermediate25Rows = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14};
-  private static final int[] intermediate25Columns = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-  private static final int[] intermediate21Rows = {1};
-  private static final int[] intermediate21Columns = {1};
+  public static ArrayList<Integer> intermediate60Rows() {
+    ArrayList<Integer> intermediate60Rows = new ArrayList<Integer>();
+    intermediate60Rows.add(0);
+    intermediate60Rows.add(15);
+    intermediate60Rows.add(15);
+    return intermediate60Rows;
+  }
+  public static ArrayList<Integer> intermediate60Columns() {
+    ArrayList<Integer> intermediate60Columns = new ArrayList<Integer>();
+    intermediate60Columns.add(15);
+    intermediate60Columns.add(0);
+    intermediate60Columns.add(15);
+    return intermediate60Columns;
+  }
+  public static ArrayList<Integer> intermediate50Rows() {
+    ArrayList<Integer> intermediate50Rows = new ArrayList<Integer>();
+    intermediate50Rows.add(0);
+    return intermediate50Rows;
+  }
+  public static ArrayList<Integer> intermediate50Columns() {
+    ArrayList<Integer> intermediate50Columns = new ArrayList<Integer>();
+    intermediate50Columns.add(0);
+    return intermediate50Columns;
+  }
+  public static ArrayList<Integer> intermediate43Rows() {
+    ArrayList<Integer> intermediate43Rows = new ArrayList<Integer>();
+    intermediate43Rows.add(0);
+    intermediate43Rows.add(0);
+    intermediate43Rows.add(0);
+    intermediate43Rows.add(0);
+    intermediate43Rows.add(2);
+    intermediate43Rows.add(4);
+    intermediate43Rows.add(6);
+    intermediate43Rows.add(6);
+    intermediate43Rows.add(7);
+    intermediate43Rows.add(9);
+    intermediate43Rows.add(9);
+    intermediate43Rows.add(10);
+    intermediate43Rows.add(12);
+    intermediate43Rows.add(13);
+    intermediate43Rows.add(14);
+    intermediate43Rows.add(14);
+    intermediate43Rows.add(15);
+    intermediate43Rows.add(15);
+    intermediate43Rows.add(15);
+    intermediate43Rows.add(15);
+    intermediate43Rows.add(15);
+    intermediate43Rows.add(15);
+    return intermediate43Rows;
+  }
+  public static ArrayList<Integer> intermediate43Columns() {
+    ArrayList<Integer> intermediate43Columns = new ArrayList<Integer>();
+    intermediate43Columns.add(3);
+    intermediate43Columns.add(4);
+    intermediate43Columns.add(6);
+    intermediate43Columns.add(11);
+    intermediate43Columns.add(0);
+    intermediate43Columns.add(15);
+    intermediate43Columns.add(0);
+    intermediate43Columns.add(15);
+    intermediate43Columns.add(15);
+    intermediate43Columns.add(0);
+    intermediate43Columns.add(15);
+    intermediate43Columns.add(15);
+    intermediate43Columns.add(15);
+    intermediate43Columns.add(0);
+    intermediate43Columns.add(0);
+    intermediate43Columns.add(15);
+    intermediate43Columns.add(1);
+    intermediate43Columns.add(7);
+    intermediate43Columns.add(8);
+    intermediate43Columns.add(9);
+    intermediate43Columns.add(10);
+    intermediate43Columns.add(12);
+    return intermediate43Columns;
+  }
+  public static ArrayList<Integer> intermediate42Rows() {
+    ArrayList<Integer> intermediate42Rows = new ArrayList<Integer>();
+    intermediate42Rows.add(0);
+    intermediate42Rows.add(0);
+    intermediate42Rows.add(0);
+    intermediate42Rows.add(0);
+    intermediate42Rows.add(0);
+    intermediate42Rows.add(0);
+    intermediate42Rows.add(0);
+    intermediate42Rows.add(0);
+    intermediate42Rows.add(1);
+    intermediate42Rows.add(2);
+    intermediate42Rows.add(3);
+    intermediate42Rows.add(3);
+    intermediate42Rows.add(4);
+    intermediate42Rows.add(5);
+    intermediate42Rows.add(5);
+    intermediate42Rows.add(7);
+    intermediate42Rows.add(8);
+    intermediate42Rows.add(8);
+    intermediate42Rows.add(10);
+    intermediate42Rows.add(11);
+    intermediate42Rows.add(11);
+    intermediate42Rows.add(12);
+    intermediate42Rows.add(13);
+    intermediate42Rows.add(15);
+    intermediate42Rows.add(15);
+    intermediate42Rows.add(15);
+    intermediate42Rows.add(15);
+    intermediate42Rows.add(15);
+    intermediate42Rows.add(15);
+    intermediate42Rows.add(15);
+    intermediate42Rows.add(15);
+    return intermediate42Rows;
+  }
+  public static ArrayList<Integer> intermediate42Columns() {
+    ArrayList<Integer> intermediate42Columns = new ArrayList<Integer>();
+    intermediate42Columns.add(5);
+    intermediate42Columns.add(7);
+    intermediate42Columns.add(8);
+    intermediate42Columns.add(9);
+    intermediate42Columns.add(10);
+    intermediate42Columns.add(12);
+    intermediate42Columns.add(13);
+    intermediate42Columns.add(14);
+    intermediate42Columns.add(15);
+    intermediate42Columns.add(15);
+    intermediate42Columns.add(0);
+    intermediate42Columns.add(15);
+    intermediate42Columns.add(0);
+    intermediate42Columns.add(0);
+    intermediate42Columns.add(15);
+    intermediate42Columns.add(0);
+    intermediate42Columns.add(0);
+    intermediate42Columns.add(15);
+    intermediate42Columns.add(0);
+    intermediate42Columns.add(0);
+    intermediate42Columns.add(15);
+    intermediate42Columns.add(0);
+    intermediate42Columns.add(15);
+    intermediate42Columns.add(2);
+    intermediate42Columns.add(3);
+    intermediate42Columns.add(4);
+    intermediate42Columns.add(5);
+    intermediate42Columns.add(6);
+    intermediate42Columns.add(11);
+    intermediate42Columns.add(13);
+    intermediate42Columns.add(14);
+    return intermediate42Columns;
+  }
+  public static ArrayList<Integer> intermediate41Rows() {
+    ArrayList<Integer> intermediate41Rows = new ArrayList<Integer>();
+    intermediate41Rows.add(0);
+    return intermediate41Rows;
+  }
+  public static ArrayList<Integer> intermediate41Columns() {
+    ArrayList<Integer> intermediate41Columns = new ArrayList<Integer>();
+    intermediate41Columns.add(2);
+    return intermediate41Columns;
+  }
+  public static ArrayList<Integer> intermediate36Rows() {
+    ArrayList<Integer> intermediate36Rows = new ArrayList<Integer>();
+    intermediate36Rows.add(0);
+    intermediate36Rows.add(1);
+    return intermediate36Rows;
+  }
+  public static ArrayList<Integer> intermediate36Columns() {
+    ArrayList<Integer> intermediate36Columns = new ArrayList<Integer>();
+    intermediate36Columns.add(1);
+    intermediate36Columns.add(0);
+    return intermediate36Columns;
+  }
+  public static ArrayList<Integer> intermediate26Rows() {
+    ArrayList<Integer> intermediate26Rows = new ArrayList<Integer>();
+    intermediate26Rows.add(3);
+    intermediate26Rows.add(5);
+    intermediate26Rows.add(9);
+    intermediate26Rows.add(11);
+    intermediate26Rows.add(13);
+    return intermediate26Rows;
+  }
+  public static ArrayList<Integer> intermediate26Columns() {
+    ArrayList<Integer> intermediate26Columns = new ArrayList<Integer>();
+    intermediate26Columns.add(12);
+    intermediate26Columns.add(6);
+    intermediate26Columns.add(10);
+    intermediate26Columns.add(4);
+    intermediate26Columns.add(14);
+    return intermediate26Columns;
+  }
+  public static ArrayList<Integer> intermediate25Rows() {
+    ArrayList<Integer> intermediate25Rows = new ArrayList<Integer>();
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(1);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(2);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(3);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(4);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(5);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(6);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(7);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(8);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(9);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(10);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(11);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(12);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(13);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    intermediate25Rows.add(14);
+    return intermediate25Rows;
+  }
+  public static ArrayList<Integer> intermediate25Columns() {
+    ArrayList<Integer> intermediate25Columns = new ArrayList<Integer>();
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(1);
+    intermediate25Columns.add(2);
+    intermediate25Columns.add(3);
+    intermediate25Columns.add(4);
+    intermediate25Columns.add(5);
+    intermediate25Columns.add(6);
+    intermediate25Columns.add(7);
+    intermediate25Columns.add(8);
+    intermediate25Columns.add(9);
+    intermediate25Columns.add(10);
+    intermediate25Columns.add(11);
+    intermediate25Columns.add(12);
+    intermediate25Columns.add(13);
+    intermediate25Columns.add(14);
+    return intermediate25Columns;
+  }
+  public static ArrayList<Integer> intermediate21Rows() {
+    ArrayList<Integer> intermediate21Rows = new ArrayList<Integer>();
+    intermediate21Rows.add(1);
+    return intermediate21Rows;
+  }
+  public static ArrayList<Integer> intermediate21Columns() {
+    ArrayList<Integer> intermediate21Columns = new ArrayList<Integer>();
+    intermediate21Columns.add(1);
+    return intermediate21Columns;
+  }
 
   private static final int[] expert50Rows = {0, 15, 15};
   private static final int[] expert50Columns = {29, 0, 29};
@@ -1130,87 +1696,105 @@ public class Board {
     Random random = new Random();
     int p = random.nextInt(100);
     if (p < 60) {
+      ArrayList<Integer> intermediate60Rows = intermediate60Rows();
+      ArrayList<Integer> intermediate60Columns = intermediate60Columns();
       int q = random.nextInt(3);
-      if (cells[intermediate60Rows[q]][intermediate60Columns[q]].checkHasMine() == true) {
-        shiftMineOnFirstMove(intermediate60Rows[q], intermediate60Columns[q], 16, 16);
+      if (cells[intermediate60Rows.get(q)][intermediate60Columns.get(q)].checkHasMine() == true) {
+        shiftMineOnFirstMove(intermediate60Rows.get(q), intermediate60Columns.get(q), 16, 16);
       }
-      openCell(intermediate60Rows[q], intermediate60Columns[q]);
-      System.out.println(intermediate60Rows[q] + " " + intermediate60Columns[q]);
+      openCell(intermediate60Rows.get(q), intermediate60Columns.get(q));
+      System.out.println(intermediate60Rows.get(q) + " " + intermediate60Columns.get(q));
     }
     else {
       p = random.nextInt(100);
       if (p < 50) {
-        if (cells[intermediate50Rows[0]][intermediate50Columns[0]].checkHasMine() == true) {
-          shiftMineOnFirstMove(intermediate50Rows[0], intermediate50Columns[0], 16, 16);
+        ArrayList<Integer> intermediate50Rows = intermediate50Rows();
+        ArrayList<Integer> intermediate50Columns = intermediate50Columns();
+        if (cells[intermediate50Rows.get(0)][intermediate50Columns.get(0)].checkHasMine() == true) {
+          shiftMineOnFirstMove(intermediate50Rows.get(0), intermediate50Columns.get(0), 16, 16);
         }
-        openCell(intermediate50Rows[0], intermediate50Columns[0]);
-        System.out.println(intermediate50Rows[0] + " " + intermediate50Columns[0]);
+        openCell(intermediate50Rows.get(0), intermediate50Columns.get(0));
+        System.out.println(intermediate50Rows.get(0) + " " + intermediate50Columns.get(0));
       }
       else {
         p = random.nextInt(100);
         if (p < 43) {
+          ArrayList<Integer> intermediate43Rows = intermediate43Rows();
+          ArrayList<Integer> intermediate43Columns = intermediate43Columns();
           int q = random.nextInt(22);
-          if (cells[intermediate43Rows[q]][intermediate43Columns[q]].checkHasMine() == true) {
-            shiftMineOnFirstMove(intermediate43Rows[q], intermediate43Columns[q], 16, 16);
+          if (cells[intermediate43Rows.get(q)][intermediate43Columns.get(q)].checkHasMine() == true) {
+            shiftMineOnFirstMove(intermediate43Rows.get(q), intermediate43Columns.get(q), 16, 16);
           }
-          openCell(intermediate43Rows[q], intermediate43Columns[q]);
-          System.out.println(intermediate43Rows[q] + " " + intermediate43Columns[q]);
+          openCell(intermediate43Rows.get(q), intermediate43Columns.get(q));
+          System.out.println(intermediate43Rows.get(q) + " " + intermediate43Columns.get(q));
         }
         else {
           p = random.nextInt(100);
           if (p < 42) {
+            ArrayList<Integer> intermediate42Rows = intermediate42Rows();
+            ArrayList<Integer> intermediate42Columns = intermediate42Columns();
             int q = random.nextInt(31);
-            if (cells[intermediate42Rows[q]][intermediate42Columns[q]].checkHasMine() == true) {
-              shiftMineOnFirstMove(intermediate42Rows[q], intermediate42Columns[q], 16, 16);
+            if (cells[intermediate42Rows.get(q)][intermediate42Columns.get(q)].checkHasMine() == true) {
+              shiftMineOnFirstMove(intermediate42Rows.get(q), intermediate42Columns.get(q), 16, 16);
             }
-            openCell(intermediate42Rows[q], intermediate42Columns[q]);
-            System.out.println(intermediate42Rows[q] + " " + intermediate42Columns[q]);
+            openCell(intermediate42Rows.get(q), intermediate42Columns.get(q));
+            System.out.println(intermediate42Rows.get(q) + " " + intermediate42Columns.get(q));
           }
           else {
             p = random.nextInt(100);
             if (p < 41) {
-              if (cells[intermediate41Rows[0]][intermediate41Columns[0]].checkHasMine() == true) {
-                shiftMineOnFirstMove(intermediate41Rows[0], intermediate41Columns[0], 16, 16);
+              ArrayList<Integer> intermediate41Rows = intermediate41Rows();
+              ArrayList<Integer> intermediate41Columns = intermediate41Columns();
+              if (cells[intermediate41Rows.get(0)][intermediate41Columns.get(0)].checkHasMine() == true) {
+                shiftMineOnFirstMove(intermediate41Rows.get(0), intermediate41Columns.get(0), 16, 16);
               }
-              openCell(intermediate41Rows[0], intermediate41Columns[0]);
-              System.out.println(intermediate41Rows[0] + " " + intermediate41Columns[0]);
+              openCell(intermediate41Rows.get(0), intermediate41Columns.get(0));
+              System.out.println(intermediate41Rows.get(0) + " " + intermediate41Columns.get(0));
             }
             else {
               p = random.nextInt(100);
               if (p < 36) {
+                ArrayList<Integer> intermediate36Rows = intermediate36Rows();
+                ArrayList<Integer> intermediate36Columns = intermediate36Columns();
                 int q = random.nextInt(2);
-                if (cells[intermediate36Rows[q]][intermediate36Columns[q]].checkHasMine() == true) {
-                  shiftMineOnFirstMove(intermediate36Rows[q], intermediate36Columns[q], 16, 16);
+                if (cells[intermediate36Rows.get(q)][intermediate36Columns.get(q)].checkHasMine() == true) {
+                  shiftMineOnFirstMove(intermediate36Rows.get(q), intermediate36Columns.get(q), 16, 16);
                 }
-                openCell(intermediate36Rows[q], intermediate36Columns[q]);
-                System.out.println(intermediate36Rows[q] + " " + intermediate36Columns[q]);
+                openCell(intermediate36Rows.get(q), intermediate36Columns.get(q));
+                System.out.println(intermediate36Rows.get(q) + " " + intermediate36Columns.get(q));
               }
               else {
                 p = random.nextInt(100);
                 if (p < 26) {
+                  ArrayList<Integer> intermediate26Rows = intermediate26Rows();
+                  ArrayList<Integer> intermediate26Columns = intermediate26Columns();
                   int q = random.nextInt(5);
-                  if (cells[intermediate26Rows[q]][intermediate26Columns[q]].checkHasMine() == true) {
-                    shiftMineOnFirstMove(intermediate26Rows[q], intermediate26Columns[q], 16, 16);
+                  if (cells[intermediate26Rows.get(q)][intermediate26Columns.get(q)].checkHasMine() == true) {
+                    shiftMineOnFirstMove(intermediate26Rows.get(q), intermediate26Columns.get(q), 16, 16);
                   }
-                  openCell(intermediate26Rows[q], intermediate26Columns[q]);
-                  System.out.println(intermediate26Rows[q] + " " + intermediate26Columns[q]);
+                  openCell(intermediate26Rows.get(q), intermediate26Columns.get(q));
+                  System.out.println(intermediate26Rows.get(q) + " " + intermediate26Columns.get(q));
                 }
                 else {
                   p = random.nextInt(100);
                   if (p < 25) {
+                    ArrayList<Integer> intermediate25Rows = intermediate25Rows();
+                    ArrayList<Integer> intermediate25Columns = intermediate25Columns();
                     int q = random.nextInt(190);
-                    if (cells[intermediate25Rows[q]][intermediate25Columns[q]].checkHasMine() == true) {
-                      shiftMineOnFirstMove(intermediate25Rows[q], intermediate25Columns[q], 16, 16);
+                    if (cells[intermediate25Rows.get(q)][intermediate25Columns.get(q)].checkHasMine() == true) {
+                      shiftMineOnFirstMove(intermediate25Rows.get(q), intermediate25Columns.get(q), 16, 16);
                     }
-                    openCell(intermediate25Rows[q], intermediate25Columns[q]);
-                    System.out.println(intermediate25Rows[q] + " " + intermediate25Columns[q]);
+                    openCell(intermediate25Rows.get(q), intermediate25Columns.get(q));
+                    System.out.println(intermediate25Rows.get(q) + " " + intermediate25Columns.get(q));
                   }
                   else {
-                    if (cells[intermediate21Rows[0]][intermediate21Columns[0]].checkHasMine() == true) {
-                      shiftMineOnFirstMove(intermediate21Rows[0], intermediate21Columns[0], 16, 16);
+                    ArrayList<Integer> intermediate21Rows = intermediate21Rows();
+                    ArrayList<Integer> intermediate21Columns = intermediate21Columns();
+                    if (cells[intermediate21Rows.get(0)][intermediate21Columns.get(0)].checkHasMine() == true) {
+                      shiftMineOnFirstMove(intermediate21Rows.get(0), intermediate21Columns.get(0), 16, 16);
                     }
-                    openCell(intermediate21Rows[0], intermediate21Columns[0]);
-                    System.out.println(intermediate21Rows[0] + " " + intermediate21Columns[0]);
+                    openCell(intermediate21Rows.get(0), intermediate21Columns.get(0));
+                    System.out.println(intermediate21Rows.get(0) + " " + intermediate21Columns.get(0));
                   }
                 }
               }
