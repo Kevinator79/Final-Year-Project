@@ -43,7 +43,7 @@ public class MinesweeperGenerator {
       minesweeper.board.beginnerFirstMove(1);
     }
     else if (chosenDifficulty.equals("intermediate")) {
-      minesweeper.board.intermediateFirstMove();
+      minesweeper.board.intermediateFirstMove(1);
     }
     else if (chosenDifficulty.equals("expert")) {
       minesweeper.board.expertFirstMove();

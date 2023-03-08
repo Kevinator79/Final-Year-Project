@@ -1692,15 +1692,26 @@ public class Board {
     }
   }
 
-  public void intermediateFirstMove() {
+  public void intermediateFirstMove(int firstMoveCheck) {
     Random random = new Random();
     int p = random.nextInt(100);
+    int setCounter = 0;
     if (p < 60) {
       ArrayList<Integer> intermediate60Rows = intermediate60Rows();
       ArrayList<Integer> intermediate60Columns = intermediate60Columns();
       int q = random.nextInt(3);
-      if (cells[intermediate60Rows.get(q)][intermediate60Columns.get(q)].checkHasMine() == true) {
+      if ((cells[intermediate60Rows.get(q)][intermediate60Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
         shiftMineOnFirstMove(intermediate60Rows.get(q), intermediate60Columns.get(q), 16, 16);
+      }
+      setCounter = 0;
+      while (cells[intermediate60Rows.get(q)][intermediate60Columns.get(q)].checkBeenOpened() == true) {
+        intermediate60Rows.remove(q);
+        intermediate60Columns.remove(q);
+        setCounter++;
+        q = random.nextInt(3-setCounter);
+      }
+      if (setCounter == 3) {
+        intermediateFirstMove(2);
       }
       openCell(intermediate60Rows.get(q), intermediate60Columns.get(q));
       System.out.println(intermediate60Rows.get(q) + " " + intermediate60Columns.get(q));
@@ -1710,8 +1721,11 @@ public class Board {
       if (p < 50) {
         ArrayList<Integer> intermediate50Rows = intermediate50Rows();
         ArrayList<Integer> intermediate50Columns = intermediate50Columns();
-        if (cells[intermediate50Rows.get(0)][intermediate50Columns.get(0)].checkHasMine() == true) {
+        if ((cells[intermediate50Rows.get(0)][intermediate50Columns.get(0)].checkHasMine() == true) && (firstMoveCheck == 1)) {
           shiftMineOnFirstMove(intermediate50Rows.get(0), intermediate50Columns.get(0), 16, 16);
+        }
+        if ((cells[intermediate50Rows.get(0)][intermediate50Columns.get(0)].checkBeenOpened() == true)) {
+          intermediateFirstMove(2);
         }
         openCell(intermediate50Rows.get(0), intermediate50Columns.get(0));
         System.out.println(intermediate50Rows.get(0) + " " + intermediate50Columns.get(0));
@@ -1722,8 +1736,18 @@ public class Board {
           ArrayList<Integer> intermediate43Rows = intermediate43Rows();
           ArrayList<Integer> intermediate43Columns = intermediate43Columns();
           int q = random.nextInt(22);
-          if (cells[intermediate43Rows.get(q)][intermediate43Columns.get(q)].checkHasMine() == true) {
+          if ((cells[intermediate43Rows.get(q)][intermediate43Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
             shiftMineOnFirstMove(intermediate43Rows.get(q), intermediate43Columns.get(q), 16, 16);
+          }
+          setCounter = 0;
+          while (cells[intermediate43Rows.get(q)][intermediate43Columns.get(q)].checkBeenOpened() == true) {
+            intermediate43Rows.remove(q);
+            intermediate43Columns.remove(q);
+            setCounter++;
+            q = random.nextInt(22-setCounter);
+          }
+          if (setCounter == 22) {
+            intermediateFirstMove(2);
           }
           openCell(intermediate43Rows.get(q), intermediate43Columns.get(q));
           System.out.println(intermediate43Rows.get(q) + " " + intermediate43Columns.get(q));
@@ -1734,8 +1758,18 @@ public class Board {
             ArrayList<Integer> intermediate42Rows = intermediate42Rows();
             ArrayList<Integer> intermediate42Columns = intermediate42Columns();
             int q = random.nextInt(31);
-            if (cells[intermediate42Rows.get(q)][intermediate42Columns.get(q)].checkHasMine() == true) {
+            if ((cells[intermediate42Rows.get(q)][intermediate42Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
               shiftMineOnFirstMove(intermediate42Rows.get(q), intermediate42Columns.get(q), 16, 16);
+            }
+            setCounter = 0;
+            while (cells[intermediate42Rows.get(q)][intermediate42Columns.get(q)].checkBeenOpened() == true) {
+              intermediate42Rows.remove(q);
+              intermediate42Columns.remove(q);
+              setCounter++;
+              q = random.nextInt(31-setCounter);
+            }
+            if (setCounter == 31) {
+              intermediateFirstMove(2);
             }
             openCell(intermediate42Rows.get(q), intermediate42Columns.get(q));
             System.out.println(intermediate42Rows.get(q) + " " + intermediate42Columns.get(q));
@@ -1745,8 +1779,11 @@ public class Board {
             if (p < 41) {
               ArrayList<Integer> intermediate41Rows = intermediate41Rows();
               ArrayList<Integer> intermediate41Columns = intermediate41Columns();
-              if (cells[intermediate41Rows.get(0)][intermediate41Columns.get(0)].checkHasMine() == true) {
+              if ((cells[intermediate41Rows.get(0)][intermediate41Columns.get(0)].checkHasMine() == true) && (firstMoveCheck == 1)) {
                 shiftMineOnFirstMove(intermediate41Rows.get(0), intermediate41Columns.get(0), 16, 16);
+              }
+              if (cells[intermediate41Rows.get(0)][intermediate41Columns.get(0)].checkBeenOpened() == true) {
+                intermediateFirstMove(2);
               }
               openCell(intermediate41Rows.get(0), intermediate41Columns.get(0));
               System.out.println(intermediate41Rows.get(0) + " " + intermediate41Columns.get(0));
@@ -1757,8 +1794,18 @@ public class Board {
                 ArrayList<Integer> intermediate36Rows = intermediate36Rows();
                 ArrayList<Integer> intermediate36Columns = intermediate36Columns();
                 int q = random.nextInt(2);
-                if (cells[intermediate36Rows.get(q)][intermediate36Columns.get(q)].checkHasMine() == true) {
+                if ((cells[intermediate36Rows.get(q)][intermediate36Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
                   shiftMineOnFirstMove(intermediate36Rows.get(q), intermediate36Columns.get(q), 16, 16);
+                }
+                setCounter = 0;
+                while (cells[intermediate36Rows.get(q)][intermediate36Columns.get(q)].checkBeenOpened() == true) {
+                  intermediate36Rows.remove(q);
+                  intermediate36Columns.remove(q);
+                  setCounter++;
+                  q = random.nextInt(2-setCounter);
+                }
+                if (setCounter == 2) {
+                  intermediateFirstMove(2);
                 }
                 openCell(intermediate36Rows.get(q), intermediate36Columns.get(q));
                 System.out.println(intermediate36Rows.get(q) + " " + intermediate36Columns.get(q));
@@ -1769,8 +1816,18 @@ public class Board {
                   ArrayList<Integer> intermediate26Rows = intermediate26Rows();
                   ArrayList<Integer> intermediate26Columns = intermediate26Columns();
                   int q = random.nextInt(5);
-                  if (cells[intermediate26Rows.get(q)][intermediate26Columns.get(q)].checkHasMine() == true) {
+                  if ((cells[intermediate26Rows.get(q)][intermediate26Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
                     shiftMineOnFirstMove(intermediate26Rows.get(q), intermediate26Columns.get(q), 16, 16);
+                  }
+                  setCounter = 0;
+                  while (cells[intermediate26Rows.get(q)][intermediate26Columns.get(q)].checkBeenOpened() == true) {
+                    intermediate26Rows.remove(q);
+                    intermediate26Columns.remove(q);
+                    setCounter++;
+                    q = random.nextInt(5-setCounter);
+                  }
+                  if (setCounter == 5) {
+                    intermediateFirstMove(2);
                   }
                   openCell(intermediate26Rows.get(q), intermediate26Columns.get(q));
                   System.out.println(intermediate26Rows.get(q) + " " + intermediate26Columns.get(q));
@@ -1781,8 +1838,18 @@ public class Board {
                     ArrayList<Integer> intermediate25Rows = intermediate25Rows();
                     ArrayList<Integer> intermediate25Columns = intermediate25Columns();
                     int q = random.nextInt(190);
-                    if (cells[intermediate25Rows.get(q)][intermediate25Columns.get(q)].checkHasMine() == true) {
+                    if ((cells[intermediate25Rows.get(q)][intermediate25Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
                       shiftMineOnFirstMove(intermediate25Rows.get(q), intermediate25Columns.get(q), 16, 16);
+                    }
+                    setCounter = 0;
+                    while (cells[intermediate25Rows.get(q)][intermediate25Columns.get(q)].checkBeenOpened() == true) {
+                      intermediate25Rows.remove(q);
+                      intermediate25Columns.remove(q);
+                      setCounter++;
+                      q = random.nextInt(190-setCounter);
+                    }
+                    if (setCounter == 190) {
+                      intermediateFirstMove(2);
                     }
                     openCell(intermediate25Rows.get(q), intermediate25Columns.get(q));
                     System.out.println(intermediate25Rows.get(q) + " " + intermediate25Columns.get(q));
@@ -1790,8 +1857,11 @@ public class Board {
                   else {
                     ArrayList<Integer> intermediate21Rows = intermediate21Rows();
                     ArrayList<Integer> intermediate21Columns = intermediate21Columns();
-                    if (cells[intermediate21Rows.get(0)][intermediate21Columns.get(0)].checkHasMine() == true) {
+                    if ((cells[intermediate21Rows.get(0)][intermediate21Columns.get(0)].checkHasMine() == true) && (firstMoveCheck == 1)) {
                       shiftMineOnFirstMove(intermediate21Rows.get(0), intermediate21Columns.get(0), 16, 16);
+                    }
+                    if (cells[intermediate21Rows.get(0)][intermediate21Columns.get(0)].checkBeenOpened() == true) {
+                      intermediateFirstMove(2);
                     }
                     openCell(intermediate21Rows.get(0), intermediate21Columns.get(0));
                     System.out.println(intermediate21Rows.get(0) + " " + intermediate21Columns.get(0));
