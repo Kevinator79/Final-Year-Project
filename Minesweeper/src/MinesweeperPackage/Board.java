@@ -2895,12 +2895,23 @@ public class Board {
   public void expertFirstMove(int firstMoveCheck) {
     Random random = new Random();
     int p = random.nextInt(100);
+    int setCounter = 0;
     if (p < 50) {
       ArrayList<Integer> expert50Rows = expert50Rows();
       ArrayList<Integer> expert50Columns = expert50Columns();
       int q = random.nextInt(3);
       if ((cells[expert50Rows.get(q)][expert50Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
         shiftMineOnFirstMove(expert50Rows.get(q), expert50Columns.get(q), 16, 30);
+      }
+      setCounter = 0;
+      while (cells[expert50Rows.get(q)][expert50Columns.get(q)].checkBeenOpened() == true) {
+        expert50Rows.remove(q);
+        expert50Columns.remove(q);
+        setCounter++;
+        q = random.nextInt(3-setCounter);
+      }
+      if (setCounter == 3) {
+        expertFirstMove(2);
       }
       openCell(expert50Rows.get(q), expert50Columns.get(q));
       System.out.println(expert50Rows.get(q) + " " + expert50Columns.get(q));
@@ -2912,6 +2923,9 @@ public class Board {
         ArrayList<Integer> expert40Columns = expert40Columns();
         if ((cells[expert40Rows.get(0)][expert40Columns.get(0)].checkHasMine() == true) && (firstMoveCheck == 1)) {
           shiftMineOnFirstMove(expert40Rows.get(0), expert40Columns.get(0), 16,30);
+        }
+        if (cells[expert40Rows.get(0)][expert40Columns.get(0)].checkBeenOpened() == true) {
+          expertFirstMove(2);
         }
         openCell(expert40Rows.get(0), expert40Columns.get(0));
         System.out.println(expert40Rows.get(0) + " " + expert40Columns.get(0));
@@ -2925,6 +2939,16 @@ public class Board {
           if ((cells[expert32Rows.get(q)][expert32Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
             shiftMineOnFirstMove(expert32Rows.get(q), expert32Columns.get(q), 16, 30);
           }
+          setCounter = 0;
+          while (cells[expert32Rows.get(q)][expert32Columns.get(q)].checkBeenOpened() == true) {
+            expert32Rows.remove(q);
+            expert32Columns.remove(q);
+            setCounter++;
+            q = random.nextInt(12-setCounter);
+          }
+          if (setCounter == 12) {
+            expertFirstMove(2);
+          }
           openCell(expert32Rows.get(q), expert32Columns.get(q));
           System.out.println(expert32Rows.get(q) + " " + expert32Columns.get(q));
         }
@@ -2937,6 +2961,16 @@ public class Board {
             if ((cells[expert31Rows.get(q)][expert31Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
               shiftMineOnFirstMove(expert31Rows.get(q), expert31Columns.get(q), 16, 30);
             }
+            setCounter = 0;
+            while (cells[expert31Rows.get(q)][expert31Columns.get(q)].checkBeenOpened() == true) {
+              expert31Rows.remove(q);
+              expert31Columns.remove(q);
+              setCounter++;
+              q = random.nextInt(68-setCounter);
+            }
+            if (setCounter == 68) {
+              expertFirstMove(2);
+            }
             openCell(expert31Rows.get(q), expert31Columns.get(q));
             System.out.println(expert31Rows.get(q) + " " + expert31Columns.get(q));
           }
@@ -2947,6 +2981,9 @@ public class Board {
               ArrayList<Integer> expert30Columns = expert30Columns();
               if ((cells[expert30Rows.get(0)][expert30Columns.get(0)].checkHasMine() == true) && (firstMoveCheck == 1)) {
                 shiftMineOnFirstMove(expert30Rows.get(0), expert30Columns.get(0), 16, 30);
+              }
+              if (cells[expert30Rows.get(0)][expert30Columns.get(0)].checkBeenOpened() == true) {
+                expertFirstMove(2);
               }
               openCell(expert30Rows.get(0), expert30Columns.get(0));
               System.out.println(expert30Rows.get(0) + " " + expert30Columns.get(0));
@@ -2960,6 +2997,16 @@ public class Board {
                 if ((cells[expert25Rows.get(q)][expert25Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
                   shiftMineOnFirstMove(expert25Rows.get(q), expert25Columns.get(q), 16, 30);
                 }
+                setCounter = 0;
+                while (cells[expert25Rows.get(q)][expert25Columns.get(q)].checkBeenOpened() == true) {
+                  expert25Rows.remove(q);
+                  expert25Columns.remove(q);
+                  setCounter++;
+                  q = random.nextInt(3-setCounter);
+                }
+                if (setCounter == 3) {
+                  expertFirstMove(2);
+                }
                 openCell(expert25Rows.get(q), expert25Columns.get(q));
                 System.out.println(expert25Rows.get(q) + " " + expert25Columns.get(q));
               }
@@ -2971,6 +3018,16 @@ public class Board {
                   int q = random.nextInt(237);
                   if ((cells[expert16Rows.get(q)][expert16Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
                     shiftMineOnFirstMove(expert16Rows.get(q), expert16Columns.get(q), 16, 30);
+                  }
+                  setCounter = 0;
+                  while (cells[expert16Rows.get(q)][expert16Columns.get(q)].checkBeenOpened() == true) {
+                    expert16Rows.remove(q);
+                    expert16Columns.remove(q);
+                    setCounter++;
+                    q = random.nextInt(237-setCounter);
+                  }
+                  if (setCounter == 237) {
+                    expertFirstMove(2);
                   }
                   openCell(expert16Rows.get(q), expert16Columns.get(q));
                   System.out.println(expert16Rows.get(q) + " " + expert16Columns.get(q));
@@ -2984,6 +3041,16 @@ public class Board {
                     if ((cells[expert15Rows.get(q)][expert15Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
                       shiftMineOnFirstMove(expert15Rows.get(q), expert15Columns.get(q), 16, 30);
                     }
+                    setCounter = 0;
+                    while (cells[expert15Rows.get(q)][expert15Columns.get(q)].checkBeenOpened() == true) {
+                      expert15Rows.remove(q);
+                      expert15Columns.remove(q);
+                      setCounter++;
+                      q = random.nextInt(153-setCounter);
+                    }
+                    if (setCounter == 153) {
+                      expertFirstMove(2);
+                    }
                     openCell(expert15Rows.get(q), expert15Columns.get(q));
                     System.out.println(expert15Rows.get(q) + " " + expert15Columns.get(q));
                   }
@@ -2993,6 +3060,16 @@ public class Board {
                     int q = random.nextInt(2);
                     if ((cells[expert12Rows.get(q)][expert12Columns.get(q)].checkHasMine() == true) && (firstMoveCheck == 1)) {
                       shiftMineOnFirstMove(expert12Rows.get(q), expert12Columns.get(q), 16, 30);
+                    }
+                    setCounter = 0;
+                    while (cells[expert12Rows.get(q)][expert12Columns.get(q)].checkBeenOpened() == true) {
+                      expert12Rows.remove(q);
+                      expert12Columns.remove(q);
+                      setCounter++;
+                      q = random.nextInt(2-setCounter);
+                    }
+                    if (setCounter == 2) {
+                      expertFirstMove(2);
                     }
                     openCell(expert12Rows.get(q), expert12Columns.get(q));
                     System.out.println(expert12Rows.get(q) + " " + expert12Columns.get(q));
