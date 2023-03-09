@@ -1875,12 +1875,12 @@ public class Board {
     }
   }
 
-  public void expertFirstMove() {
+  public void expertFirstMove(int firstMoveCheck) {
     Random random = new Random();
     int p = random.nextInt(100);
     if (p < 50) {
       int q = random.nextInt(3);
-      if (cells[expert50Rows[q]][expert50Columns[q]].checkHasMine() == true) {
+      if ((cells[expert50Rows[q]][expert50Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
         shiftMineOnFirstMove(expert50Rows[q], expert50Columns[q], 16, 30);
       }
       openCell(expert50Rows[q], expert50Columns[q]);
@@ -1889,7 +1889,7 @@ public class Board {
     else {
       p = random.nextInt(100);
       if (p < 40) {
-        if (cells[expert40Rows[0]][expert40Columns[0]].checkHasMine() == true) {
+        if ((cells[expert40Rows[0]][expert40Columns[0]].checkHasMine() == true) && (firstMoveCheck == 1)) {
           shiftMineOnFirstMove(expert40Rows[0], expert40Columns[0], 16, 30);
         }
         openCell(expert40Rows[0], expert40Columns[0]);
@@ -1899,7 +1899,7 @@ public class Board {
         p = random.nextInt(100);
         if (p < 32) {
           int q = random.nextInt(12);
-          if (cells[expert32Rows[q]][expert32Columns[q]].checkHasMine() == true) {
+          if ((cells[expert32Rows[q]][expert32Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
             shiftMineOnFirstMove(expert32Rows[q], expert32Columns[q], 16, 30);
           }
           openCell(expert32Rows[q], expert32Columns[q]);
@@ -1909,7 +1909,7 @@ public class Board {
           p = random.nextInt(100);
           if (p < 31) {
             int q = random.nextInt(68);
-            if (cells[expert31Rows[q]][expert31Columns[q]].checkHasMine() == true) {
+            if ((cells[expert31Rows[q]][expert31Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
               shiftMineOnFirstMove(expert31Rows[q], expert31Columns[q], 16, 30);
             }
             openCell(expert31Rows[q], expert31Columns[q]);
@@ -1918,7 +1918,7 @@ public class Board {
           else {
             p = random.nextInt(100);
             if (p < 30) {
-              if (cells[expert30Rows[0]][expert30Columns[0]].checkHasMine() == true) {
+              if ((cells[expert30Rows[0]][expert30Columns[0]].checkHasMine() == true) && (firstMoveCheck == 1)) {
                 shiftMineOnFirstMove(expert30Rows[0], expert30Columns[0], 16, 30);
               }
               openCell(expert30Rows[0], expert30Columns[0]);
@@ -1928,7 +1928,7 @@ public class Board {
               p = random.nextInt(100);
               if (p < 25) {
                 int q = random.nextInt(3);
-                if (cells[expert25Rows[q]][expert25Columns[q]].checkHasMine() == true) {
+                if ((cells[expert25Rows[q]][expert25Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
                   shiftMineOnFirstMove(expert25Rows[q], expert25Columns[q], 16, 30);
                 }
                 openCell(expert25Rows[q], expert25Columns[q]);
@@ -1938,7 +1938,7 @@ public class Board {
                 p = random.nextInt(100);
                 if (p < 16) {
                   int q = random.nextInt(237);
-                  if (cells[expert16Rows[q]][expert16Columns[q]].checkHasMine() == true) {
+                  if ((cells[expert16Rows[q]][expert16Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
                     shiftMineOnFirstMove(expert16Rows[q], expert16Columns[q], 16, 30);
                   }
                   openCell(expert16Rows[q], expert16Columns[q]);
@@ -1948,7 +1948,7 @@ public class Board {
                   p = random.nextInt(100);
                   if (p < 15) {
                     int q = random.nextInt(153);
-                    if (cells[expert15Rows[q]][expert15Columns[q]].checkHasMine() == true) {
+                    if ((cells[expert15Rows[q]][expert15Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
                       shiftMineOnFirstMove(expert15Rows[q], expert15Columns[q], 16, 30);
                     }
                     openCell(expert15Rows[q], expert15Columns[q]);
@@ -1956,7 +1956,7 @@ public class Board {
                   }
                   else {
                     int q = random.nextInt(2);
-                    if (cells[expert12Rows[q]][expert12Columns[q]].checkHasMine() == true) {
+                    if ((cells[expert12Rows[q]][expert12Columns[q]].checkHasMine() == true) && (firstMoveCheck == 1)) {
                       shiftMineOnFirstMove(expert12Rows[q], expert12Columns[q], 16, 30);
                     }
                     openCell(expert12Rows[q], expert12Columns[q]);

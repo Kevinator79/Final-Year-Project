@@ -46,7 +46,7 @@ public class MinesweeperGenerator {
       minesweeper.board.intermediateFirstMove(1);
     }
     else if (chosenDifficulty.equals("expert")) {
-      minesweeper.board.expertFirstMove();
+      minesweeper.board.expertFirstMove(1);
     }
     System.out.println("\n");
     minesweeper.board.displayBoardForSolving();
