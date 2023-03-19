@@ -2527,7 +2527,7 @@ public class Board {
     displayGeneratedBoard();
   }
 
-  public cellToOpen beginnerFirstMove(int firstMoveCheck) {
+  public void beginnerFirstMove(int firstMoveCheck) {
     Random random = new Random();
     int p = random.nextInt(100);
     int setCounter = 0;
@@ -2552,9 +2552,17 @@ public class Board {
       if (setCounter == 3) {
         beginnerFirstMove(2);
       }
-      //openCell(beginner60Rows.get(q), beginner60Columns.get(q));
-      System.out.println(beginner60Rows.get(q) + " " + beginner60Columns.get(q));
-      return new cellToOpen(beginner60Rows.get(q), beginner60Columns.get(q));
+      else {
+        if (cells[beginner60Rows.get(q)][beginner60Columns.get(q)].checkHasMine() == true) {
+          System.out.println("Game Over!");
+          System.out.println(beginner60Rows.get(q) + " " + beginner60Columns.get(q));
+          gameOver();
+        }
+        else {
+          openCell(beginner60Rows.get(q), beginner60Columns.get(q));
+          System.out.println(beginner60Rows.get(q) + " " + beginner60Columns.get(q));
+        }
+      }
     }
     else {
       p = random.nextInt(100);
@@ -2567,9 +2575,8 @@ public class Board {
         if (cells[beginner50Rows.get(0)][beginner50Columns.get(0)].checkBeenOpened() == true) {
           beginnerFirstMove(2);
         }
-        //openCell(beginner50Rows.get(0), beginner50Columns.get(0));
+        openCell(beginner50Rows.get(0), beginner50Columns.get(0));
         System.out.println(beginner50Rows.get(0) + " " + beginner50Columns.get(0));
-        return new cellToOpen(beginner50Rows.get(0), beginner50Columns.get(0));
       }
       else {
         p = random.nextInt(100);
@@ -2594,9 +2601,17 @@ public class Board {
           if (setCounter == 10) {
             beginnerFirstMove(2);
           }
-          //openCell(beginner42Rows.get(q), beginner42Columns.get(q));
-          System.out.println(beginner42Rows.get(q) + " " + beginner42Columns.get(q));
-          return new cellToOpen(beginner42Rows.get(q), beginner42Columns.get(q));
+          else {
+            if (cells[beginner42Rows.get(q)][beginner42Columns.get(q)].checkHasMine() == true) {
+              System.out.println("Game Over!");
+              System.out.println(beginner42Rows.get(q) + " " + beginner42Columns.get(q));
+              gameOver();
+            }
+            else {
+              openCell(beginner42Rows.get(q), beginner42Columns.get(q));
+              System.out.println(beginner42Rows.get(q) + " " + beginner42Columns.get(q));
+            }
+          }
         }
         else {
           p = random.nextInt(100);
@@ -2621,9 +2636,17 @@ public class Board {
             if (setCounter == 11) {
               beginnerFirstMove(2);
             }
-            //openCell(beginner41Rows.get(q), beginner41Columns.get(q));
-            System.out.println(beginner41Rows.get(q) + " " + beginner41Columns.get(q));
-            return new cellToOpen(beginner41Rows.get(q), beginner41Columns.get(q));
+            else {
+              if (cells[beginner41Rows.get(q)][beginner41Columns.get(q)].checkHasMine() == true) {
+                System.out.println("Game Over!");
+                System.out.println(beginner41Rows.get(q) + " " + beginner41Columns.get(q));
+                gameOver();
+              }
+              else {
+                openCell(beginner41Rows.get(q), beginner41Columns.get(q));
+                System.out.println(beginner41Rows.get(q) + " " + beginner41Columns.get(q));
+              }
+            }
           }
           else {
             p = random.nextInt(100);
@@ -2636,9 +2659,8 @@ public class Board {
               if (cells[beginner40Rows.get(0)][beginner40Columns.get(0)].checkBeenOpened() == true) {
                 beginnerFirstMove(2);
               }
-              //openCell(beginner40Rows.get(0), beginner40Columns.get(0));
+              openCell(beginner40Rows.get(0), beginner40Columns.get(0));
               System.out.println(beginner40Rows.get(0) + " " + beginner40Columns.get(0));
-              return new cellToOpen(beginner40Rows.get(0), beginner40Columns.get(0));
             }
             else {
               p = random.nextInt(100);
@@ -2663,9 +2685,17 @@ public class Board {
                 if (setCounter == 2) {
                   beginnerFirstMove(2);
                 }
-                //openCell(beginner34Rows.get(q), beginner34Columns.get(q));
-                System.out.println(beginner34Rows.get(q) + " " + beginner34Columns.get(q));
-                return new cellToOpen(beginner34Rows.get(q), beginner34Columns.get(q));
+                else {
+                  if (cells[beginner34Rows.get(q)][beginner34Columns.get(q)].checkHasMine() == true) {
+                    System.out.println("Game Over!");
+                    System.out.println(beginner34Rows.get(q) + " " + beginner34Columns.get(q));
+                    gameOver();
+                  }
+                  else {
+                    openCell(beginner34Rows.get(q), beginner34Columns.get(q));
+                    System.out.println(beginner34Rows.get(q) + " " + beginner34Columns.get(q));
+                  }
+                }
               }
               else {
                 p = random.nextInt(100);
@@ -2690,9 +2720,17 @@ public class Board {
                   if (setCounter == 24) {
                     beginnerFirstMove(2);
                   }
-                  //openCell(beginner24Rows.get(q), beginner24Columns.get(q));
-                  System.out.println(beginner24Rows.get(q) + " " + beginner24Columns.get(q));
-                  return new cellToOpen(beginner24Rows.get(q), beginner24Columns.get(q));
+                  else {
+                    if (cells[beginner24Rows.get(q)][beginner24Columns.get(q)].checkHasMine() == true) {
+                      System.out.println("Game Over!");
+                      System.out.println(beginner24Rows.get(q) + " " + beginner24Columns.get(q));
+                      gameOver();
+                    }
+                    else {
+                      openCell(beginner24Rows.get(q), beginner24Columns.get(q));
+                      System.out.println(beginner24Rows.get(q) + " " + beginner24Columns.get(q));
+                    }
+                  }
                 }
                 else {
                   p = random.nextInt(100);
@@ -2717,9 +2755,17 @@ public class Board {
                     if (setCounter == 11) {
                       beginnerFirstMove(2);
                     }
-                    //openCell(beginner23Rows.get(q), beginner23Columns.get(q));
-                    System.out.println(beginner23Rows.get(q) + " " + beginner23Columns.get(q));
-                    return new cellToOpen(beginner23Rows.get(q), beginner23Columns.get(q));
+                    else {
+                      if (cells[beginner23Rows.get(q)][beginner23Columns.get(q)].checkHasMine() == true) {
+                        System.out.println("Game Over!");
+                        System.out.println(beginner23Rows.get(q) + " " + beginner23Columns.get(q));
+                        gameOver();
+                      }
+                      else {
+                        openCell(beginner23Rows.get(q), beginner23Columns.get(q));
+                        System.out.println(beginner23Rows.get(q) + " " + beginner23Columns.get(q));
+                      }
+                    }
                   }
                   else {
                     ArrayList<Integer> beginner19Rows = beginner19Rows();
@@ -2730,9 +2776,17 @@ public class Board {
                     if (cells[beginner19Rows.get(0)][beginner19Columns.get(0)].checkBeenOpened() == true) {
                       beginnerFirstMove(2);
                     }
-                    //openCell(beginner19Rows.get(0), beginner19Columns.get(0));
-                    System.out.println(beginner19Rows.get(0) + " " + beginner19Columns.get(0));
-                    return new cellToOpen(beginner19Rows.get(0), beginner19Columns.get(0));
+                    else {
+                      if (cells[beginner19Rows.get(0)][beginner19Columns.get(0)].checkHasMine() == true) {
+                        System.out.println("Game Over!");
+                        System.out.println(beginner19Rows.get(0) + " " + beginner19Columns.get(0));
+                        gameOver();
+                      }
+                      else {
+                        openCell(beginner19Rows.get(0), beginner19Columns.get(0));
+                        System.out.println(beginner19Rows.get(0) + " " + beginner19Columns.get(0));
+                      }
+                    }
                   }
                 }
               }
@@ -3047,13 +3101,26 @@ public class Board {
         expert50Rows.remove(q);
         expert50Columns.remove(q);
         setCounter++;
-        q = random.nextInt(3-setCounter);
+        if (setCounter == 3) {
+          break;
+        }
+        System.out.println("Its reroll time 50");
+        q = random.nextInt(expert50Rows.size());
       }
       if (setCounter == 3) {
         expertFirstMove(2);
       }
-      openCell(expert50Rows.get(q), expert50Columns.get(q));
-      System.out.println(expert50Rows.get(q) + " " + expert50Columns.get(q));
+      else {
+        if (cells[expert50Rows.get(q)][expert50Columns.get(q)].checkHasMine() == true) {
+          System.out.println("Game Over!");
+          System.out.println(expert50Rows.get(q) + " " + expert50Columns.get(q));
+          gameOver();
+        }
+        else {
+          openCell(expert50Rows.get(q), expert50Columns.get(q));
+          System.out.println(expert50Rows.get(q) + " " + expert50Columns.get(q));
+        }
+      }
     }
     else {
       p = random.nextInt(100);
@@ -3066,8 +3133,17 @@ public class Board {
         if (cells[expert40Rows.get(0)][expert40Columns.get(0)].checkBeenOpened() == true) {
           expertFirstMove(2);
         }
-        openCell(expert40Rows.get(0), expert40Columns.get(0));
-        System.out.println(expert40Rows.get(0) + " " + expert40Columns.get(0));
+        else {
+          if (cells[expert40Rows.get(0)][expert40Columns.get(0)].checkHasMine() == true) {
+            System.out.println("Game Over!");
+            System.out.println(expert40Rows.get(0) + " " + expert40Columns.get(0));
+            gameOver();
+          }
+          else {
+            openCell(expert40Rows.get(0), expert40Columns.get(0));
+            System.out.println(expert40Rows.get(0) + " " + expert40Columns.get(0));
+          }
+        }
       }
       else {
         p = random.nextInt(100);
@@ -3083,13 +3159,26 @@ public class Board {
             expert32Rows.remove(q);
             expert32Columns.remove(q);
             setCounter++;
-            q = random.nextInt(12-setCounter);
+            if (setCounter == 12) {
+              break;
+            }
+            System.out.println("Its reroll time 32");
+            q = random.nextInt(expert32Rows.size());
           }
           if (setCounter == 12) {
             expertFirstMove(2);
           }
-          openCell(expert32Rows.get(q), expert32Columns.get(q));
-          System.out.println(expert32Rows.get(q) + " " + expert32Columns.get(q));
+          else {
+            if (cells[expert32Rows.get(q)][expert32Columns.get(q)].checkHasMine() == true) {
+              System.out.println("Game Over!");
+              System.out.println(expert32Rows.get(q) + " " + expert32Columns.get(q));
+              gameOver();
+            }
+            else {
+              openCell(expert32Rows.get(q), expert32Columns.get(q));
+              System.out.println(expert32Rows.get(q) + " " + expert32Columns.get(q));
+            }
+          }
         }
         else {
           p = random.nextInt(100);
@@ -3105,13 +3194,26 @@ public class Board {
               expert31Rows.remove(q);
               expert31Columns.remove(q);
               setCounter++;
-              q = random.nextInt(68-setCounter);
+              if (setCounter == 68) {
+                break;
+              }
+              System.out.println("Its reroll time 31");
+              q = random.nextInt(expert31Rows.size());
             }
             if (setCounter == 68) {
               expertFirstMove(2);
             }
-            openCell(expert31Rows.get(q), expert31Columns.get(q));
-            System.out.println(expert31Rows.get(q) + " " + expert31Columns.get(q));
+            else {
+              if (cells[expert31Rows.get(q)][expert31Columns.get(q)].checkHasMine() == true) {
+                System.out.println("Game Over!");
+                System.out.println(expert31Rows.get(q) + " " + expert31Columns.get(q));
+                gameOver();
+              }
+              else {
+                openCell(expert31Rows.get(q), expert31Columns.get(q));
+                System.out.println(expert31Rows.get(q) + " " + expert31Columns.get(q));
+              }
+            }
           }
           else {
             p = random.nextInt(100);
@@ -3124,8 +3226,17 @@ public class Board {
               if (cells[expert30Rows.get(0)][expert30Columns.get(0)].checkBeenOpened() == true) {
                 expertFirstMove(2);
               }
-              openCell(expert30Rows.get(0), expert30Columns.get(0));
-              System.out.println(expert30Rows.get(0) + " " + expert30Columns.get(0));
+              else {
+                if (cells[expert30Rows.get(0)][expert30Columns.get(0)].checkHasMine() == true) {
+                  System.out.println("Game Over!");
+                  System.out.println(expert30Rows.get(0) + " " + expert30Columns.get(0));
+                  gameOver();
+                }
+                else {
+                  openCell(expert30Rows.get(0), expert30Columns.get(0));
+                  System.out.println(expert30Rows.get(0) + " " + expert30Columns.get(0));
+                }
+              }
             }
             else {
               p = random.nextInt(100);
@@ -3141,13 +3252,26 @@ public class Board {
                   expert25Rows.remove(q);
                   expert25Columns.remove(q);
                   setCounter++;
-                  q = random.nextInt(3-setCounter);
+                  if (setCounter == 3) {
+                    break;
+                  }
+                  System.out.println("Its reroll time 25");
+                  q = random.nextInt(expert25Rows.size());
                 }
                 if (setCounter == 3) {
                   expertFirstMove(2);
                 }
-                openCell(expert25Rows.get(q), expert25Columns.get(q));
-                System.out.println(expert25Rows.get(q) + " " + expert25Columns.get(q));
+                else {
+                  if (cells[expert25Rows.get(q)][expert25Columns.get(q)].checkHasMine() == true) {
+                    System.out.println("Game Over!");
+                    System.out.println(expert25Rows.get(q) + " " + expert25Columns.get(q));
+                    gameOver();
+                  }
+                  else {
+                    openCell(expert25Rows.get(q), expert25Columns.get(q));
+                    System.out.println(expert25Rows.get(q) + " " + expert25Columns.get(q));
+                  }
+                }
               }
               else {
                 p = random.nextInt(100);
@@ -3163,13 +3287,26 @@ public class Board {
                     expert16Rows.remove(q);
                     expert16Columns.remove(q);
                     setCounter++;
-                    q = random.nextInt(237-setCounter);
+                    if (setCounter == 237) {
+                      break;
+                    }
+                    System.out.println("Its reroll time 16");
+                    q = random.nextInt(expert16Rows.size());
                   }
                   if (setCounter == 237) {
                     expertFirstMove(2);
                   }
-                  openCell(expert16Rows.get(q), expert16Columns.get(q));
-                  System.out.println(expert16Rows.get(q) + " " + expert16Columns.get(q));
+                  else {
+                    if (cells[expert16Rows.get(q)][expert16Columns.get(q)].checkHasMine() == true) {
+                      System.out.println("Game Over!");
+                      System.out.println(expert16Rows.get(q) + " " + expert16Columns.get(q));
+                      gameOver();
+                    }
+                    else {
+                      openCell(expert16Rows.get(q), expert16Columns.get(q));
+                      System.out.println(expert16Rows.get(q) + " " + expert16Columns.get(q));
+                    }
+                  }
                 }
                 else {
                   p = random.nextInt(100);
@@ -3185,13 +3322,26 @@ public class Board {
                       expert15Rows.remove(q);
                       expert15Columns.remove(q);
                       setCounter++;
-                      q = random.nextInt(153-setCounter);
+                      if (setCounter == 153) {
+                        break;
+                      }
+                      System.out.println("Its reroll time 15");
+                      q = random.nextInt(expert15Rows.size());
                     }
                     if (setCounter == 153) {
                       expertFirstMove(2);
                     }
-                    openCell(expert15Rows.get(q), expert15Columns.get(q));
-                    System.out.println(expert15Rows.get(q) + " " + expert15Columns.get(q));
+                    else {
+                      if (cells[expert15Rows.get(q)][expert15Columns.get(q)].checkHasMine() == true) {
+                        System.out.println("Game Over!");
+                        System.out.println(expert15Rows.get(q) + " " + expert15Columns.get(q));
+                        gameOver();
+                      }
+                      else {
+                        openCell(expert15Rows.get(q), expert15Columns.get(q));
+                        System.out.println(expert15Rows.get(q) + " " + expert15Columns.get(q));
+                      }
+                    }
                   }
                   else {
                     ArrayList<Integer> expert12Rows = expert12Rows();
@@ -3205,13 +3355,26 @@ public class Board {
                       expert12Rows.remove(q);
                       expert12Columns.remove(q);
                       setCounter++;
-                      q = random.nextInt(2-setCounter);
+                      if (setCounter == 2) {
+                        break;
+                      }
+                      System.out.println("Its reroll time 12");
+                      q = random.nextInt(expert12Rows.size());
                     }
                     if (setCounter == 2) {
                       expertFirstMove(2);
                     }
-                    openCell(expert12Rows.get(q), expert12Columns.get(q));
-                    System.out.println(expert12Rows.get(q) + " " + expert12Columns.get(q));
+                    else {
+                      if (cells[expert12Rows.get(q)][expert12Columns.get(q)].checkHasMine() == true) {
+                        System.out.println("Game Over!");
+                        System.out.println(expert12Rows.get(q) + " " + expert12Columns.get(q));
+                        gameOver();
+                      }
+                      else {
+                        openCell(expert12Rows.get(q), expert12Columns.get(q));
+                        System.out.println(expert12Rows.get(q) + " " + expert12Columns.get(q));
+                      }
+                    }
                   }
                 }
               }
@@ -3241,11 +3404,6 @@ public class Board {
   }
 
   public boolean playMove(int row, int column) {
-    //if (cells[row][column].checkHasMine() == true) {
-    //  System.out.println("Game Over!");
-    //  return false;
-    //}
-    //else {
     cells[row][column].setBeenOpened();
     if (cells[row][column].getAdjacentMines() == 0) {
       openNeighboursRecursively(row, column);
@@ -3262,7 +3420,6 @@ public class Board {
     openCellsForSingleCell();
     displayBoardForSolving();
     System.out.println("Openings revealed");
-    //}
     return true;
   }
 

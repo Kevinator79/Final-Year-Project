@@ -40,8 +40,7 @@ public class MinesweeperGenerator {
     MinesweeperGenerator minesweeper = new MinesweeperGenerator(rows, columns, numberOfMines);
     //choose firstMove depending on difficulty
     if (chosenDifficulty.equals("beginner")) {
-      cellToOpen cellToBeOpened = minesweeper.board.beginnerFirstMove(1);
-      minesweeper.board.playMove(cellToBeOpened.getRow(), cellToBeOpened.getColumn());
+      minesweeper.board.beginnerFirstMove(1);
     }
     else if (chosenDifficulty.equals("intermediate")) {
       minesweeper.board.intermediateFirstMove(1);
@@ -66,7 +65,7 @@ public class MinesweeperGenerator {
       //  break;
       //}
 
-      minesweeper.board.intermediateFirstMove(2);
+      minesweeper.board.beginnerFirstMove(2);
       minesweeper.board.patternMatching();
       minesweeper.board.openCellsForSingleCell();
       minesweeper.board.patternMatching();
