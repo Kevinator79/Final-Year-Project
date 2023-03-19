@@ -40,7 +40,8 @@ public class MinesweeperGenerator {
     MinesweeperGenerator minesweeper = new MinesweeperGenerator(rows, columns, numberOfMines);
     //choose firstMove depending on difficulty
     if (chosenDifficulty.equals("beginner")) {
-      minesweeper.board.beginnerFirstMove(1);
+      cellToOpen cellToBeOpened = minesweeper.board.beginnerFirstMove(1);
+      minesweeper.board.playMove(cellToBeOpened.getRow(), cellToBeOpened.getColumn());
     }
     else if (chosenDifficulty.equals("intermediate")) {
       minesweeper.board.intermediateFirstMove(1);
@@ -48,17 +49,41 @@ public class MinesweeperGenerator {
     else if (chosenDifficulty.equals("expert")) {
       minesweeper.board.expertFirstMove(1);
     }
-    System.out.println("\n");
-    minesweeper.board.displayBoardForSolving();
-    System.out.println("Openings revealed");
-    while (minesweeper.board.checkAllCellsOpenedOrFlagged() != (rows * columns)) {
-      Scanner sc = new Scanner(System.in);
-      System.out.println("Enter row number - 1: "); //remember 0 indexed
-      int row = sc.nextInt();
-      System.out.println("Enter column number - 1: "); //remember 0 indexed
-      int column = sc.nextInt();
-      minesweeper.board.playMove(row, column);
+    //System.out.println("\n");
+    //minesweeper.board.displayBoardForSolving();
+    //System.out.println("Openings revealed");
+    while ((minesweeper.board.checkAllCellsOpenedOrFlagged() != (rows * columns)) && (minesweeper.board.gameState == true)) {
+      //Scanner sc = new Scanner(System.in);
+      //System.out.println("Enter row number - 1: "); //remember 0 indexed
+      //int row = sc.nextInt();
+      //System.out.println("Enter column number - 1: "); //remember 0 indexed
+      //int column = sc.nextInt();
+      //minesweeper.board.playMove(row, column);
+
+      //cellToOpen cellToBeOpened = minesweeper.board.beginnerFirstMove(2);
+      //minesweeper.board.playMove(cellToBeOpened.getRow(), cellToBeOpened.getColumn());
+      //if (minesweeper.board.playMove(cellToBeOpened.getRow(), cellToBeOpened.getColumn()) == false) {
+      //  break;
+      //}
+
+      minesweeper.board.intermediateFirstMove(2);
+      minesweeper.board.patternMatching();
+      minesweeper.board.openCellsForSingleCell();
+      minesweeper.board.patternMatching();
+      minesweeper.board.openCellsForSingleCell();
+      minesweeper.board.patternMatching();
+      minesweeper.board.openCellsForSingleCell();
+      minesweeper.board.patternMatching();
+      minesweeper.board.openCellsForSingleCell();
+      minesweeper.board.patternMatching();
+      minesweeper.board.openCellsForSingleCell();
+      minesweeper.board.displayBoardForSolving();
+      System.out.println("Openings revealed");
     }
+    System.out.println("Success");
+    //if (minesweeper.board.checkAllCellsOpenedOrFlagged() == (rows * columns)) {
+    //  System.out.println("Success");
+    //}
     System.out.println("End Test");
   }
 }
