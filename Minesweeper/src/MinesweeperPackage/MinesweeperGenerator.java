@@ -9,8 +9,6 @@ public class MinesweeperGenerator {
     board = new Board(rows, columns, numberOfMines);
     board.initBoard();
     board.displayGeneratedBoard();
-    //System.out.print("\n");
-    //board.displayBoardForSolving();
   }
 
   public static void main(String[] args) {
@@ -41,17 +39,66 @@ public class MinesweeperGenerator {
     //choose firstMove depending on difficulty
     if (chosenDifficulty.equals("beginner")) {
       minesweeper.board.beginnerFirstMove(1);
+      while ((minesweeper.board.checkAllCellsOpenedOrFlagged() != (rows * columns)) && (minesweeper.board.gameState == true)) {
+        minesweeper.board.beginnerFirstMove(2);
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.displayBoardForSolving();
+        System.out.println("Openings revealed");
+      }
+      System.out.println("End Test");
     }
     else if (chosenDifficulty.equals("intermediate")) {
       minesweeper.board.intermediateFirstMove(1);
+      while ((minesweeper.board.checkAllCellsOpenedOrFlagged() != (rows * columns)) && (minesweeper.board.gameState == true)) {
+        minesweeper.board.intermediateFirstMove(2);
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.displayBoardForSolving();
+        System.out.println("Openings revealed");
+      }
+      System.out.println("End Test");
     }
     else if (chosenDifficulty.equals("expert")) {
       minesweeper.board.expertFirstMove(1);
+      while ((minesweeper.board.checkAllCellsOpenedOrFlagged() != (rows * columns)) && (minesweeper.board.gameState == true)) {
+        minesweeper.board.expertFirstMove(2);
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.patternMatching();
+        minesweeper.board.openCellsForSingleCell();
+        minesweeper.board.displayBoardForSolving();
+        System.out.println("Openings revealed");
+      }
+      System.out.println("End Test");
     }
     //System.out.println("\n");
     //minesweeper.board.displayBoardForSolving();
     //System.out.println("Openings revealed");
-    while ((minesweeper.board.checkAllCellsOpenedOrFlagged() != (rows * columns)) && (minesweeper.board.gameState == true)) {
+    /*while ((minesweeper.board.checkAllCellsOpenedOrFlagged() != (rows *
+    columns)) && (minesweeper.board.gameState == true)) {
       //Scanner sc = new Scanner(System.in);
       //System.out.println("Enter row number - 1: "); //remember 0 indexed
       //int row = sc.nextInt();
@@ -64,25 +111,11 @@ public class MinesweeperGenerator {
       //if (minesweeper.board.playMove(cellToBeOpened.getRow(), cellToBeOpened.getColumn()) == false) {
       //  break;
       //}
-
-      minesweeper.board.beginnerFirstMove(2);
-      minesweeper.board.patternMatching();
-      minesweeper.board.openCellsForSingleCell();
-      minesweeper.board.patternMatching();
-      minesweeper.board.openCellsForSingleCell();
-      minesweeper.board.patternMatching();
-      minesweeper.board.openCellsForSingleCell();
-      minesweeper.board.patternMatching();
-      minesweeper.board.openCellsForSingleCell();
-      minesweeper.board.patternMatching();
-      minesweeper.board.openCellsForSingleCell();
-      minesweeper.board.displayBoardForSolving();
-      System.out.println("Openings revealed");
-    }
-    System.out.println("Success");
+    }*/
+    //System.out.println("Success");
     //if (minesweeper.board.checkAllCellsOpenedOrFlagged() == (rows * columns)) {
     //  System.out.println("Success");
     //}
-    System.out.println("End Test");
+    //System.out.println("End Test");
   }
 }
