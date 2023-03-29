@@ -15,6 +15,9 @@ public class MinesweeperGenerator {
     Scanner difficulty = new Scanner(System.in);
     System.out.println("Enter difficulty: (beginner, intermediate, expert) ");
     String chosenDifficulty = difficulty.nextLine();
+    Scanner solver = new Scanner(System.in);
+    System.out.println("Select solver: (baseline, winrate, time, guesses) ");
+    String chosenSolver = solver.nextLine();
     //set parameters depending on difficulty
     int rows = 0;
     int columns = 0;
@@ -40,17 +43,22 @@ public class MinesweeperGenerator {
     if (chosenDifficulty.equals("beginner")) {
       minesweeper.board.beginnerFirstMove(1);
       while ((minesweeper.board.checkAllCellsOpenedOrFlagged() != (rows * columns)) && (minesweeper.board.gameState == true)) {
-        minesweeper.board.beginnerFirstMove(2);
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
+        if (chosenSolver.equals("baseline")) {
+          minesweeper.board.beginnerFirstMove(2);
+          minesweeper.board.baselineSolver();
+        }
+        else if (chosenSolver.equals("winrate")) {
+          minesweeper.board.beginnerFirstMove(2);
+          minesweeper.board.winRateSolver();
+        }
+        else if (chosenSolver.equals("time")) {
+          minesweeper.board.beginnerFirstMove(2);
+          minesweeper.board.timeToCompleteSolver();
+        }
+        else if (chosenSolver.equals("guesses")) {
+          minesweeper.board.beginnerFirstMoveReversed(2);
+          minesweeper.board.numberOfGuesses();
+        }
         minesweeper.board.displayBoardForSolving();
         System.out.println("Openings revealed");
       }
@@ -59,17 +67,22 @@ public class MinesweeperGenerator {
     else if (chosenDifficulty.equals("intermediate")) {
       minesweeper.board.intermediateFirstMove(1);
       while ((minesweeper.board.checkAllCellsOpenedOrFlagged() != (rows * columns)) && (minesweeper.board.gameState == true)) {
-        minesweeper.board.intermediateFirstMove(2);
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
+        if (chosenSolver.equals("baseline")) {
+          minesweeper.board.intermediateFirstMove(2);
+          minesweeper.board.baselineSolver();
+        }
+        else if (chosenSolver.equals("winrate")) {
+          minesweeper.board.intermediateFirstMove(2);
+          minesweeper.board.winRateSolver();
+        }
+        else if (chosenSolver.equals("time")) {
+          minesweeper.board.intermediateFirstMove(2);
+          minesweeper.board.timeToCompleteSolver();
+        }
+        else if (chosenSolver.equals("guesses")) {
+          minesweeper.board.intermediateFirstMoveReversed(2);
+          minesweeper.board.numberOfGuesses();
+        }
         minesweeper.board.displayBoardForSolving();
         System.out.println("Openings revealed");
       }
@@ -78,17 +91,22 @@ public class MinesweeperGenerator {
     else if (chosenDifficulty.equals("expert")) {
       minesweeper.board.expertFirstMove(1);
       while ((minesweeper.board.checkAllCellsOpenedOrFlagged() != (rows * columns)) && (minesweeper.board.gameState == true)) {
-        minesweeper.board.expertFirstMove(2);
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
-        minesweeper.board.patternMatching();
-        minesweeper.board.openCellsForSingleCell();
+        if (chosenSolver.equals("baseline")) {
+          minesweeper.board.expertFirstMove(2);
+          minesweeper.board.baselineSolver();
+        }
+        else if (chosenSolver.equals("winrate")) {
+          minesweeper.board.expertFirstMove(2);
+          minesweeper.board.winRateSolver();
+        }
+        else if (chosenSolver.equals("time")) {
+          minesweeper.board.expertFirstMove(2);
+          minesweeper.board.timeToCompleteSolver();
+        }
+        else if (chosenSolver.equals("guesses")) {
+          minesweeper.board.expertFirstMoveReversed(2);
+          minesweeper.board.numberOfGuesses();
+        }
         minesweeper.board.displayBoardForSolving();
         System.out.println("Openings revealed");
       }
@@ -105,17 +123,8 @@ public class MinesweeperGenerator {
       //System.out.println("Enter column number - 1: "); //remember 0 indexed
       //int column = sc.nextInt();
       //minesweeper.board.playMove(row, column);
-
-      //cellToOpen cellToBeOpened = minesweeper.board.beginnerFirstMove(2);
-      //minesweeper.board.playMove(cellToBeOpened.getRow(), cellToBeOpened.getColumn());
-      //if (minesweeper.board.playMove(cellToBeOpened.getRow(), cellToBeOpened.getColumn()) == false) {
-      //  break;
-      //}
     }*/
     //System.out.println("Success");
-    //if (minesweeper.board.checkAllCellsOpenedOrFlagged() == (rows * columns)) {
-    //  System.out.println("Success");
-    //}
     //System.out.println("End Test");
   }
 }
