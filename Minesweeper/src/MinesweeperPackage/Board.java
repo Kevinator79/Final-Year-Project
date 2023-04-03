@@ -2586,7 +2586,7 @@ public class Board {
     cells[currentRow][currentColumn].removeMine();
     generateNumbers();
     System.out.println("Mine shifted");
-    displayGeneratedBoard();
+    //displayGeneratedBoard();
   }
 
   public void beginnerFirstMove(int firstMoveCheck) {
