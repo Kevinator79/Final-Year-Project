@@ -4422,6 +4422,7 @@ public class Board {
     return true;
   }
 
+  //The following code is adapted from Bhure, S. "Learn Java by Building the Minesweeper Game". https://betterprogramming.pub/learn-java-by-building-the-minesweeper-game-98f20a510254 [accessed 12 Apr 2023]
   public void displayGeneratedBoard() {
     for (int i = 0; i < rows; i++) {
       System.out.print("\t ");
@@ -4446,6 +4447,7 @@ public class Board {
     }
   }
 
+  //The following code is adapted from Bhure, S. "Learn Java by Building the Minesweeper Game". https://betterprogramming.pub/learn-java-by-building-the-minesweeper-game-98f20a510254 [accessed 12 Apr 2023]
   public void displayBoardForSolving() {
     for (int i = 0; i < rows; i++) {
       System.out.print("\t ");
